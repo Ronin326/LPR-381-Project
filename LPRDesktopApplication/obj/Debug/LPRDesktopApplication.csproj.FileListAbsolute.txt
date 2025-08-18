@@ -9,3 +9,14 @@ C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LP
 C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.exe
 C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.pdb
 C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.exe.config
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\bin\Debug\LPRDesktopApplication.exe.config
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\bin\Debug\LPRDesktopApplication.exe
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\bin\Debug\LPRDesktopApplication.pdb
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.csproj.AssemblyReference.cache
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.exe.config
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.MainForm.resources
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.Properties.Resources.resources
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.csproj.GenerateResource.cache
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.csproj.CoreCompileInputs.cache
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.exe
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.pdb
