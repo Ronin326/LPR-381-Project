@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LPRDesktopApplication.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace LPRDesktopApplication
 		public MainForm()
 		{
 			InitializeComponent();
+		}
+
+		private void SolveModelButton_Click(object sender, EventArgs e)
+		{
+			ModelInputForm form = new ModelInputForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
 		}
 	}
 }

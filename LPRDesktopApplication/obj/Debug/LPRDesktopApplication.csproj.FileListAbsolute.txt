@@ -9,3 +9,4 @@ C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LP
 C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.exe
 C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.pdb
 C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.exe.config
+C:\Users\Ruan\OneDrive\Documents\Belgium Campus\Year 3\LPR381\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.Forms.ModelInputForm.resources
