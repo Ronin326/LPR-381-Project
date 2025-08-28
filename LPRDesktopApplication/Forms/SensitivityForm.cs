@@ -16,5 +16,29 @@ namespace LPRDesktopApplication.Forms
 		{
 			InitializeComponent();
 		}
+
+		private void SolveModelButton_Click(object sender, EventArgs e)
+		{
+			ModelInputForm form = new ModelInputForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void HomeButton_Click(object sender, EventArgs e)
+		{
+			MainForm form = new MainForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void ResultsButton_Click(object sender, EventArgs e)
+		{
+			SolutionForm form = new SolutionForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
 	}
 }

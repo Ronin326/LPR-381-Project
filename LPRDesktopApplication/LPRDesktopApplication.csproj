@@ -77,6 +77,12 @@
     <EmbeddedResource Include="Forms\ModelInputForm.resx">
       <DependentUpon>ModelInputForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SensitivityForm.resx">
+      <DependentUpon>SensitivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SolutionForm.resx">
+      <DependentUpon>SolutionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

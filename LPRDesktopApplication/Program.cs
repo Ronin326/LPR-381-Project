@@ -20,7 +20,7 @@ namespace LPRDesktopApplication
             string outputPath = @"C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\Output\canonicalLP.txt";
             var cuttingPlaneAlgorithm = new ConicalForm();
 
-            cuttingPlaneAlgorithm.GenerateConicalForm(inputPath, outputPath);
+            //cuttingPlaneAlgorithm.GenerateConicalForm(inputPath, outputPath);
 
 			// Adjust the file paths for your system
 

@@ -25,5 +25,21 @@ namespace LPRDesktopApplication
 			form.ShowDialog();
 			this.Close();
 		}
+
+		private void ResultsButton_Click(object sender, EventArgs e)
+		{
+			SolutionForm form = new SolutionForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void AnalysisButton_Click(object sender, EventArgs e)
+		{
+			SensitivityForm form = new SensitivityForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
 	}
 }

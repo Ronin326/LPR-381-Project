@@ -19,7 +19,10 @@ namespace LPRDesktopApplication.Forms
 
 		private void HomeButton_Click(object sender, EventArgs e)
 		{
-
+			MainForm form = new MainForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
 		}
 
 		private void label4_Click(object sender, EventArgs e)
@@ -55,6 +58,22 @@ namespace LPRDesktopApplication.Forms
 		private void radioButton5_CheckedChanged(object sender, EventArgs e)
 		{
 
+		}
+
+		private void ResultsButton_Click(object sender, EventArgs e)
+		{
+			SolutionForm form = new SolutionForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void AnalysisButton_Click(object sender, EventArgs e)
+		{
+			SensitivityForm form = new SensitivityForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
 		}
 	}
 }

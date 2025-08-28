@@ -244,6 +244,7 @@
 			this.AnalysisButton.TabIndex = 8;
 			this.AnalysisButton.Text = "Analysis";
 			this.AnalysisButton.UseVisualStyleBackColor = false;
+			this.AnalysisButton.Click += new System.EventHandler(this.AnalysisButton_Click);
 			// 
 			// ResultsButton
 			// 
@@ -262,6 +263,7 @@
 			this.ResultsButton.TabIndex = 9;
 			this.ResultsButton.Text = "Results";
 			this.ResultsButton.UseVisualStyleBackColor = false;
+			this.ResultsButton.Click += new System.EventHandler(this.ResultsButton_Click);
 			// 
 			// panel3
 			// 
