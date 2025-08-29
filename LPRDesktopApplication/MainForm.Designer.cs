@@ -160,6 +160,7 @@
 			this.SolveIPModelSideButton.TabIndex = 2;
 			this.SolveIPModelSideButton.Text = "Solve IP Model";
 			this.SolveIPModelSideButton.UseVisualStyleBackColor = false;
+			this.SolveIPModelSideButton.Click += new System.EventHandler(this.SolveIPModelSideButton_Click);
 			// 
 			// pictureBox1
 			// 
@@ -189,6 +190,7 @@
 			this.SolveLPModelSideButton.TabIndex = 0;
 			this.SolveLPModelSideButton.Text = "Solve LP Model";
 			this.SolveLPModelSideButton.UseVisualStyleBackColor = false;
+			this.SolveLPModelSideButton.Click += new System.EventHandler(this.SolveLPModelSideButton_Click);
 			// 
 			// HomeButton
 			// 
@@ -408,6 +410,7 @@
 			this.button2.TabIndex = 1;
 			this.button2.Text = "Start IP Model ⮚";
 			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// panel4
 			// 
@@ -467,6 +470,7 @@
 			this.button1.TabIndex = 0;
 			this.button1.Text = "Start LP Model ⮚";
 			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// label2
 			// 

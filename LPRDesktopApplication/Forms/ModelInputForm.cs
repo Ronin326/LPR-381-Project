@@ -75,5 +75,27 @@ namespace LPRDesktopApplication.Forms
 			form.ShowDialog();
 			this.Close();
 		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			Data.DataHandler.OpenModel();
+
+			//Set textBox text to model
+			ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
+		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+			Data.DataHandler.OpenModel();
+
+			//Set textBox text to model
+			ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			var createModelForm = new CreateModelForm();
+			createModelForm.ShowDialog();
+		}
 	}
 }

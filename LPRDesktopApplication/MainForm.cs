@@ -41,5 +41,37 @@ namespace LPRDesktopApplication
 			form.ShowDialog();
 			this.Close();
 		}
+
+		private void SolveLPModelSideButton_Click(object sender, EventArgs e)
+		{
+			ModelInputForm form = new ModelInputForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void SolveIPModelSideButton_Click(object sender, EventArgs e)
+		{
+			ModelInputForm form = new ModelInputForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			ModelInputForm form = new ModelInputForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			ModelInputForm form = new ModelInputForm();
+			this.Hide();
+			form.ShowDialog();
+			this.Close();
+		}
 	}
 }

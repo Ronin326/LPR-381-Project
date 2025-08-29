@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Logic.cs" />
+    <Compile Include="Data\DataHandler.cs" />
+    <Compile Include="Forms\CreateModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\SensitivityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,8 +114,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Input\" />
     <Folder Include="Output\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Input\Example.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

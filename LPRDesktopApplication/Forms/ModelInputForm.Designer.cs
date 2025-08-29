@@ -51,8 +51,8 @@
 			this.LogoBox = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.button2 = new System.Windows.Forms.Button();
+			this.ModelViewTextBox = new System.Windows.Forms.TextBox();
+			this.LoadModelButtun = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
@@ -196,6 +196,7 @@
 			this.button1.TabIndex = 12;
 			this.button1.Text = "✚ Create Model";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button6
 			// 
@@ -209,6 +210,7 @@
 			this.button6.TabIndex = 11;
 			this.button6.Text = "☁↑ Load Model";
 			this.button6.UseVisualStyleBackColor = true;
+			this.button6.Click += new System.EventHandler(this.button6_Click);
 			// 
 			// pictureBox7
 			// 
@@ -401,8 +403,8 @@
 			// panel3
 			// 
 			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.panel3.Controls.Add(this.textBox1);
-			this.panel3.Controls.Add(this.button2);
+			this.panel3.Controls.Add(this.ModelViewTextBox);
+			this.panel3.Controls.Add(this.LoadModelButtun);
 			this.panel3.Controls.Add(this.label2);
 			this.panel3.Controls.Add(this.label1);
 			this.panel3.Location = new System.Drawing.Point(3, 3);
@@ -410,31 +412,32 @@
 			this.panel3.Size = new System.Drawing.Size(787, 289);
 			this.panel3.TabIndex = 0;
 			// 
-			// textBox1
+			// ModelViewTextBox
 			// 
-			this.textBox1.BackColor = System.Drawing.Color.Black;
-			this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.ForeColor = System.Drawing.Color.White;
-			this.textBox1.Location = new System.Drawing.Point(5, 140);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(777, 146);
-			this.textBox1.TabIndex = 14;
-			this.textBox1.Text = "No Model Loaded Yet. Click \"Load Model\" to view model.";
+			this.ModelViewTextBox.BackColor = System.Drawing.Color.Black;
+			this.ModelViewTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ModelViewTextBox.ForeColor = System.Drawing.Color.White;
+			this.ModelViewTextBox.Location = new System.Drawing.Point(5, 140);
+			this.ModelViewTextBox.Multiline = true;
+			this.ModelViewTextBox.Name = "ModelViewTextBox";
+			this.ModelViewTextBox.Size = new System.Drawing.Size(777, 146);
+			this.ModelViewTextBox.TabIndex = 14;
+			this.ModelViewTextBox.Text = "No Model Loaded Yet. Click \"Load Model\" to view model.";
 			// 
-			// button2
+			// LoadModelButtun
 			// 
-			this.button2.BackColor = System.Drawing.Color.Black;
-			this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.ForeColor = System.Drawing.Color.White;
-			this.button2.Location = new System.Drawing.Point(5, 88);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(779, 36);
-			this.button2.TabIndex = 13;
-			this.button2.Text = "☁↑ Load Model";
-			this.button2.UseVisualStyleBackColor = false;
+			this.LoadModelButtun.BackColor = System.Drawing.Color.Black;
+			this.LoadModelButtun.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.LoadModelButtun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.LoadModelButtun.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.LoadModelButtun.ForeColor = System.Drawing.Color.White;
+			this.LoadModelButtun.Location = new System.Drawing.Point(5, 88);
+			this.LoadModelButtun.Name = "LoadModelButtun";
+			this.LoadModelButtun.Size = new System.Drawing.Size(779, 36);
+			this.LoadModelButtun.TabIndex = 13;
+			this.LoadModelButtun.Text = "☁↑ Load Model";
+			this.LoadModelButtun.UseVisualStyleBackColor = false;
+			this.LoadModelButtun.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// label2
 			// 
@@ -668,9 +671,9 @@
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button LoadModelButtun;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox ModelViewTextBox;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.RadioButton radioButton1;
