@@ -8,121 +8,139 @@ using System.Windows.Forms;
 
 namespace LPRDesktopApplication.Models
 {
-	internal class ConicalForm
-	{
-		private class LinearProgram
-		{
-			public bool IsMaximization { get; set; }
-			public double[] ObjectiveCoefficients { get; set; }
-			public List<double[]> Constraints { get; set; } = new();
-			public List<string> Relations { get; set; } = new();
-			public List<double> RHS { get; set; } = new();
-			public string[] SignRestrictions { get; set; }
-		}
+    internal class ConicalForm
+    {
+        public static void GenerateConicalForm(string inputFilePath)
+        {
+            try
+            {
+                // Read all lines from the input file
+                string[] lines = File.ReadAllLines(inputFilePath);
+                if (lines.Length < 2)
+                    throw new ArgumentException("Input file must have at least 2 lines (objective and at least one constraint).");
 
-		public void GenerateConicalForm(string path)
-		{
-			var lines = File.ReadAllLines(path)
-				.Where(l => !string.IsNullOrWhiteSpace(l))
-				.Select(l => l.Trim())
-				.ToArray();
+                // Parse the objective (max/min and coefficients)
+                string maxOrMin = lines[0].Trim().ToLower();
+                if (maxOrMin != "max" && maxOrMin != "min")
+                    throw new ArgumentException("First line must be 'max' or 'min'.");
 
-			if (lines.Length < 3)
-				throw new InvalidOperationException("Expected: objective line, >=1 constraint line, and a sign-restrictions line.");
+                // Parse objective coefficients
+                string[] objTokens = lines[1].Trim().Split(' ');
+                List<double> objCoefficients = new List<double>();
+                foreach (string token in objTokens)
+                {
+                    if (!double.TryParse(token, out double coef))
+                        throw new ArgumentException($"Invalid objective coefficient: {token}");
+                    objCoefficients.Add(coef);
+                }
+                int numVariables = objCoefficients.Count;
 
-			LinearProgram lp = new LinearProgram();
-			lp.IsMaximization = lines[0].Contains("max");
-			var coefficients = lines[0]
-				.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
-				.Where(c => c != "max" && c != "min")
-				.Select(c => double.Parse(c, CultureInfo.InvariantCulture))
-				.ToArray();
-			lp.ObjectiveCoefficients = coefficients;
+                // Parse constraints
+                List<List<double>> constraintCoefficients = new List<List<double>>();
+                List<string> constraintSigns = new List<string>();
+                List<double> rhsValues = new List<double>();
+                int slackCount = 0, surplusCount = 0;
 
-			// Parse constraints
-			for (int i = 1; i < lines.Length - 1; i++)
-			{
-				var parts = lines[i].Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 2; i < lines.Length - 1; i++)
+                {
+                    string[] tokens = lines[i].Trim().Split(' ');
+                    if (tokens.Length < numVariables + 2)
+                        throw new ArgumentException($"Constraint {i - 1} has insufficient tokens.");
 
-				if (!double.TryParse(parts.Last(), NumberStyles.Any, CultureInfo.InvariantCulture, out double rhs))
-					continue; // skip non-numeric lines (var constraints)
+                    // Parse coefficients
+                    List<double> coeffs = new List<double>();
+                    for (int j = 0; j < numVariables; j++)
+                    {
+                        if (!double.TryParse(tokens[j], out double coef))
+                            throw new ArgumentException($"Invalid coefficient in constraint {i - 1}: {tokens[j]}");
+                        coeffs.Add(coef);
+                    }
+                    constraintCoefficients.Add(coeffs);
 
-				var coeffs = parts.Take(parts.Length - 2)
-								  .Select(c => double.Parse(c, CultureInfo.InvariantCulture))
-								  .ToArray();
+                    // Parse sign
+                    string sign = tokens[numVariables];
+                    if (sign != "<=" && sign != ">=" && sign != "=")
+                        throw new ArgumentException($"Invalid constraint sign in constraint {i - 1}: {sign}");
+                    constraintSigns.Add(sign);
+                    if (sign == "<=") slackCount++;
+                    else if (sign == ">=") surplusCount++;
 
-				lp.Constraints.Add(coeffs);
-				lp.Relations.Add(parts[parts.Length - 2]);
-				lp.RHS.Add(rhs);
-			}
+                    // Parse RHS
+                    if (!double.TryParse(tokens[numVariables + 1], out double rhs))
+                        throw new ArgumentException($"Invalid RHS in constraint {i - 1}: {tokens[numVariables + 1]}");
+                    rhsValues.Add(rhs);
+                }
 
-			// Last line = variable restrictions
-			lp.SignRestrictions = lines[lines.Length - 1]
-				.Split(new[] { ' ', '\t', ',' }, StringSplitOptions.RemoveEmptyEntries)
-				.ToArray();
+                // Parse variable types
+                string[] varTypes = lines[lines.Length - 1].Trim().Split(' ');
+                if (varTypes.Length != numVariables)
+                    throw new ArgumentException($"Last line must have exactly {numVariables} type specifiers (one for each variable).");
+                List<string> variableConstraints = varTypes.ToList();
+                foreach (string constraint in variableConstraints)
+                {
+                    if (constraint != "+" && constraint != "-" && constraint != "int" && constraint != "bin")
+                        throw new ArgumentException($"Invalid variable constraint: {constraint}. Must be '+', '-', 'int', or 'bin'.");
+                }
 
-			// Create Conical Form
-			Program.ConicalFormLines.Clear();
+                // Prepare output
+                string outputFilePath = Path.Combine(Path.GetDirectoryName(inputFilePath),
+                    Path.GetFileNameWithoutExtension(inputFilePath) + "_formatted.txt");
+                using (StreamWriter writer = new StreamWriter(outputFilePath))
+                {
+                    // Write header
+                    List<string> header = new List<string> { maxOrMin };
+                    for (int i = 1; i <= numVariables; i++)
+                        header.Add($"x{i}");
+                    for (int i = 1; i <= slackCount; i++)
+                        header.Add($"s{i}");
+                    for (int i = 1; i <= surplusCount; i++)
+                        header.Add($"e{i}");
+                    header.Add("rhs");
+                    writer.WriteLine(string.Join("\t", header));
 
-			// Objective function
-			string objLine = lp.IsMaximization ? "max z = " : "min z = ";
-			for (int i = 0; i < lp.ObjectiveCoefficients.Length; i++)
-			{
-				double coef = lp.ObjectiveCoefficients[i];
-				objLine += i == 0
-					? $"-{coef.ToString(CultureInfo.InvariantCulture)}x{i + 1}"
-					: $" - {coef.ToString(CultureInfo.InvariantCulture)}x{i + 1}";
-			}
-			Program.ConicalFormLines.Add(objLine);
+                    // Write objective row
+                    List<string> objRow = new List<string> { "z" };
+                    objRow.AddRange(objCoefficients.Select(c => c.ToString()));
+                    objRow.AddRange(Enumerable.Repeat("0", slackCount + surplusCount));
+                    objRow.Add("0");
+                    writer.WriteLine(string.Join("\t", objRow));
 
-			// Constraints
-			int k = 1;
-			for (int i = 0; i < lp.Constraints.Count; i++)
-			{
-				var coeffs = (double[])lp.Constraints[i].Clone();
-				double rhs = lp.RHS[i];
-				string rel = lp.Relations[i];
-				string line = "";
+                    // Write constraint rows
+                    int currentSlack = 1, currentSurplus = 1;
+                    for (int i = 0; i < constraintCoefficients.Count; i++)
+                    {
+                        List<string> row = new List<string> { (i + 1).ToString() };
+                        row.AddRange(constraintCoefficients[i].Select(c => c.ToString()));
+                        // Add slack/surplus variables
+                        List<string> slackSurplus = Enumerable.Repeat("0", slackCount + surplusCount).ToList();
+                        if (constraintSigns[i] == "<=")
+                        {
+                            slackSurplus[currentSlack - 1] = "1";
+                            currentSlack++;
+                        }
+                        else if (constraintSigns[i] == ">=")
+                        {
+                            slackSurplus[slackCount + currentSurplus - 1] = "-1";
+                            currentSurplus++;
+                        }
+                        row.AddRange(slackSurplus);
+                        row.Add(rhsValues[i].ToString());
+                        writer.WriteLine(string.Join("\t", row));
+                    }
 
-				if (rel == ">=")
-				{
-					for (int j = 0; j < coeffs.Length; j++)
-						coeffs[j] *= -1;
-					rhs *= -1;
-				}
+                    // Write sign row
+                    List<string> signRow = new List<string> { "sign" };
+                    signRow.AddRange(variableConstraints);
+                    writer.WriteLine(string.Join("\t", signRow));
+                }
 
-				for (int j = 0; j < coeffs.Length; j++)
-				{
-					line += j == 0
-						? $"{coeffs[j]}x{j + 1}"
-						: $" {(coeffs[j] >= 0 ? "+" : "-")} {Math.Abs(coeffs[j])}x{j + 1}";
-				}
-
-				line += rel == ">=" ? $" + e{k} = {rhs}" : $" + s{k} = {rhs}";
-				k++;
-				Program.ConicalFormLines.Add(line);
-			}
-
-			// Variable constraints display
-			StringBuilder varConstraints = new StringBuilder();
-			for (int i = 0; i < lp.SignRestrictions.Length; i++)
-			{
-				string varType = lp.SignRestrictions[i].ToLower();
-				string varName = $"x{i + 1}";
-				switch (varType)
-				{
-					case "+": varConstraints.Append($"{varName} ≥ 0; "); break;
-					case "-": varConstraints.Append($"{varName} ≤ 0; "); break;
-					case "urs": varConstraints.Append($"{varName} unrestricted; "); break;
-					case "int": varConstraints.Append($"{varName} ∈ Z; "); break;
-					case "bin": varConstraints.Append($"{varName} ∈ {{0,1}}; "); break;
-					default: varConstraints.Append($"{varName} unknown; "); break;
-				}
-			}
-
-			Program.ConicalFormLines.Add(""); // blank line before variable constraints
-			Program.ConicalFormLines.Add("Variable Constraints:");
-			Program.ConicalFormLines.Add(varConstraints.ToString().TrimEnd(' ', ';'));
-		}
-	}
+                Console.WriteLine($"Output written to {outputFilePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        
+        }
+    }
 }
