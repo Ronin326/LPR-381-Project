@@ -81,7 +81,7 @@ namespace LPRDesktopApplication.Forms
 			Data.DataHandler.OpenModel();
 
 			//Set textBox text to model
-			ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
+			//ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
 		}
 
 		private void button6_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace LPRDesktopApplication.Forms
 			Data.DataHandler.OpenModel();
 
 			//Set textBox text to model
-			ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
+			//ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
 		}
 
 		private void button1_Click(object sender, EventArgs e)

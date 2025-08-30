@@ -1,30 +1,58 @@
-﻿using LPRDesktopApplication.Models;
+﻿using LPRDesktopApplication;
+using LPRDesktopApplication.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
-namespace LPRDesktopApplication
+static class Program
 {
-	internal static class Program
-	{
+    [STAThread]
+    static void Main()
+    {
+        try
+        {
+            string inputDir = @"C:\Users\reina\Desktop\Universiteit\LPR381\LPR-381-Project\LPRDesktopApplication\Input";
+            string inputFilePath = Path.Combine(inputDir, "lp.txt");
 
-		//Global List of strings for cononical form
-		public static List<string> ConicalFormLines = new List<string>();
+            // Verify input file exists
+            if (!File.Exists(inputFilePath))
+            {
+                MessageBox.Show($"Input file not found at: {inputFilePath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
+            // Generate canonical form
+            ConicalForm.GenerateConicalForm(inputFilePath);
+            string canonicalFilePath = Path.Combine(inputDir, Path.GetFileNameWithoutExtension(inputFilePath) + "_formatted.txt");
 
-		static void Main()
-		{
-			ConicalForm.GenerateConicalForm("C:/Users/reina/Desktop/Universiteit/LPR381/LPR-381-Project/LPRDesktopApplication/Input/lp.txt");
-            Console.WriteLine("Cononical form:");
-            Application.EnableVisualStyles(); 
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+            // Verify canonical file was created
+            if (!File.Exists(canonicalFilePath))
+            {
+                MessageBox.Show($"Canonical form file not created at: {canonicalFilePath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Solve using Branch and Bound
+            BranchAndBoundSolver.Solve(canonicalFilePath);
+            string outputFilePath = Path.Combine(inputDir, "BranchAndBound.txt");
+
+            // Verify output file was created
+            if (!File.Exists(outputFilePath))
+            {
+                MessageBox.Show($"Branch and Bound output file not created at: {outputFilePath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show($"Processing completed. Files created at:\n{canonicalFilePath}\n{outputFilePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Start the Windows Forms application
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error: {ex.Message}\nStack Trace: {ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
