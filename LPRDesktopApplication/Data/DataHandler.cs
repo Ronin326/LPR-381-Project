@@ -1,4 +1,5 @@
 ﻿using LPRDesktopApplication.Forms;
+using LPRDesktopApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,7 @@ namespace LPRDesktopApplication.Data
 			}
 
 			//Get Cononical form
-			Models.ConicalForm conical = new Models.ConicalForm();
-
-			conical.GenerateConicalForm(ModelPath);
+			ConicalForm.GenerateConicalForm(ModelPath);
 			
 		}
 	}
