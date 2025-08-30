@@ -7,11 +7,23 @@ using LPRDesktopApplication.Models;
 
 namespace LPRDesktopApplication
 {
+	//Enum for algorithms
+	public enum Algorithms
+	{
+		PrimalSimplex = 1,
+		DualSimplex,
+		BanchAndBound,
+		CuttingPlane,
+		Knapsack
+	}
 	internal static class Program
 	{
 
 		//Global List of strings for cononical form
 		public static List<string> ConicalFormLines = new List<string>();
+
+		//Global var for algoritm
+		public static Algorithms AlgorithmSelected = new Algorithms();
 
 		/// <summary>
 		/// The main entry point for the application.

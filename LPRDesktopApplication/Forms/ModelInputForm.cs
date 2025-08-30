@@ -97,5 +97,70 @@ namespace LPRDesktopApplication.Forms
 			var createModelForm = new CreateModelForm();
 			createModelForm.ShowDialog();
 		}
+
+		private void PrimalSideButton_Click(object sender, EventArgs e)
+		{
+			PrimalRadioButton.Checked = true;
+		}
+
+		private void DualSideButton_Click(object sender, EventArgs e)
+		{
+			DualRadioButton.Checked = true;
+		}
+
+		private void BranchSideButton_Click(object sender, EventArgs e)
+		{
+			BranchRadioButton.Checked = true;
+		}
+
+		private void CuttingSideButton_Click(object sender, EventArgs e)
+		{
+			CuttinRadioButton.Checked = true;
+		}
+
+		private void KnapsackSideButton_Click(object sender, EventArgs e)
+		{
+			KnapsackRadioButton.Checked = true;
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			if (Program.ConicalFormLines.Count > 0)
+			{
+				if (PrimalRadioButton.Checked)
+				{
+					Console.WriteLine("Primal Simplex Selected");
+					Program.AlgorithmSelected = Algorithms.PrimalSimplex;
+				}
+				else if (DualRadioButton.Checked)
+				{
+					Console.WriteLine("Dual Simplex Selected");
+					Program.AlgorithmSelected = Algorithms.DualSimplex;
+				}
+				else if (BranchRadioButton.Checked)
+				{
+					Console.WriteLine("Branch and Bound Selected");
+					Program.AlgorithmSelected = Algorithms.BanchAndBound;
+				}
+				else if (CuttinRadioButton.Checked)
+				{
+					Console.WriteLine("Cutting Plane Selected");
+					Program.AlgorithmSelected = Algorithms.CuttingPlane;
+				}
+				else if (KnapsackRadioButton.Checked)
+				{
+					Console.WriteLine("Knapsack Selected");
+					Program.AlgorithmSelected = Algorithms.Knapsack;
+				}
+				else
+				{
+					MessageBox.Show("Please Select a Algorithm");
+				}
+			}
+			else
+			{
+				MessageBox.Show("Please Load a Model to Solve");
+			}
+		}
 	}
 }

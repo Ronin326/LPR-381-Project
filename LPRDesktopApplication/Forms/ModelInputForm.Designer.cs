@@ -38,16 +38,16 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.pictureBox7 = new System.Windows.Forms.PictureBox();
-			this.button4 = new System.Windows.Forms.Button();
+			this.KnapsackSideButton = new System.Windows.Forms.Button();
 			this.pictureBox8 = new System.Windows.Forms.PictureBox();
-			this.button5 = new System.Windows.Forms.Button();
+			this.CuttingSideButton = new System.Windows.Forms.Button();
 			this.label9 = new System.Windows.Forms.Label();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.HelpAboutSideButton = new System.Windows.Forms.Button();
+			this.BranchSideButton = new System.Windows.Forms.Button();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.SolveIPModelSideButton = new System.Windows.Forms.Button();
+			this.DualSideButton = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.SolveLPModelSideButton = new System.Windows.Forms.Button();
+			this.PrimalSideButton = new System.Windows.Forms.Button();
 			this.LogoBox = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel3 = new System.Windows.Forms.Panel();
@@ -56,14 +56,15 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.radioButton5 = new System.Windows.Forms.RadioButton();
-			this.radioButton4 = new System.Windows.Forms.RadioButton();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.button3 = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.AlgorthmSelectGroupBox = new System.Windows.Forms.GroupBox();
+			this.PrimalRadioButton = new System.Windows.Forms.RadioButton();
+			this.DualRadioButton = new System.Windows.Forms.RadioButton();
+			this.BranchRadioButton = new System.Windows.Forms.RadioButton();
+			this.CuttinRadioButton = new System.Windows.Forms.RadioButton();
+			this.KnapsackRadioButton = new System.Windows.Forms.RadioButton();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -75,6 +76,7 @@
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.panel4.SuspendLayout();
+			this.AlgorthmSelectGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel2
@@ -169,16 +171,16 @@
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Controls.Add(this.button6);
 			this.panel1.Controls.Add(this.pictureBox7);
-			this.panel1.Controls.Add(this.button4);
+			this.panel1.Controls.Add(this.KnapsackSideButton);
 			this.panel1.Controls.Add(this.pictureBox8);
-			this.panel1.Controls.Add(this.button5);
+			this.panel1.Controls.Add(this.CuttingSideButton);
 			this.panel1.Controls.Add(this.label9);
 			this.panel1.Controls.Add(this.pictureBox3);
-			this.panel1.Controls.Add(this.HelpAboutSideButton);
+			this.panel1.Controls.Add(this.BranchSideButton);
 			this.panel1.Controls.Add(this.pictureBox2);
-			this.panel1.Controls.Add(this.SolveIPModelSideButton);
+			this.panel1.Controls.Add(this.DualSideButton);
 			this.panel1.Controls.Add(this.pictureBox1);
-			this.panel1.Controls.Add(this.SolveLPModelSideButton);
+			this.panel1.Controls.Add(this.PrimalSideButton);
 			this.panel1.Location = new System.Drawing.Point(4, 58);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(176, 601);
@@ -223,24 +225,25 @@
 			this.pictureBox7.TabIndex = 10;
 			this.pictureBox7.TabStop = false;
 			// 
-			// button4
+			// KnapsackSideButton
 			// 
-			this.button4.BackColor = System.Drawing.Color.Transparent;
-			this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button4.FlatAppearance.BorderSize = 0;
-			this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button4.ForeColor = System.Drawing.Color.Silver;
-			this.button4.Location = new System.Drawing.Point(41, 189);
-			this.button4.Name = "button4";
-			this.button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.button4.Size = new System.Drawing.Size(130, 31);
-			this.button4.TabIndex = 9;
-			this.button4.Text = "Knapsack";
-			this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button4.UseVisualStyleBackColor = false;
+			this.KnapsackSideButton.BackColor = System.Drawing.Color.Transparent;
+			this.KnapsackSideButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.KnapsackSideButton.FlatAppearance.BorderSize = 0;
+			this.KnapsackSideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.KnapsackSideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.KnapsackSideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.KnapsackSideButton.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.KnapsackSideButton.ForeColor = System.Drawing.Color.Silver;
+			this.KnapsackSideButton.Location = new System.Drawing.Point(41, 189);
+			this.KnapsackSideButton.Name = "KnapsackSideButton";
+			this.KnapsackSideButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.KnapsackSideButton.Size = new System.Drawing.Size(130, 31);
+			this.KnapsackSideButton.TabIndex = 9;
+			this.KnapsackSideButton.Text = "Knapsack";
+			this.KnapsackSideButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.KnapsackSideButton.UseVisualStyleBackColor = false;
+			this.KnapsackSideButton.Click += new System.EventHandler(this.KnapsackSideButton_Click);
 			// 
 			// pictureBox8
 			// 
@@ -253,24 +256,25 @@
 			this.pictureBox8.TabIndex = 8;
 			this.pictureBox8.TabStop = false;
 			// 
-			// button5
+			// CuttingSideButton
 			// 
-			this.button5.BackColor = System.Drawing.Color.Transparent;
-			this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button5.FlatAppearance.BorderSize = 0;
-			this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button5.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button5.ForeColor = System.Drawing.Color.Silver;
-			this.button5.Location = new System.Drawing.Point(41, 152);
-			this.button5.Name = "button5";
-			this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.button5.Size = new System.Drawing.Size(130, 31);
-			this.button5.TabIndex = 7;
-			this.button5.Text = "Cutting Plane";
-			this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button5.UseVisualStyleBackColor = false;
+			this.CuttingSideButton.BackColor = System.Drawing.Color.Transparent;
+			this.CuttingSideButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.CuttingSideButton.FlatAppearance.BorderSize = 0;
+			this.CuttingSideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.CuttingSideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.CuttingSideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.CuttingSideButton.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.CuttingSideButton.ForeColor = System.Drawing.Color.Silver;
+			this.CuttingSideButton.Location = new System.Drawing.Point(41, 152);
+			this.CuttingSideButton.Name = "CuttingSideButton";
+			this.CuttingSideButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.CuttingSideButton.Size = new System.Drawing.Size(130, 31);
+			this.CuttingSideButton.TabIndex = 7;
+			this.CuttingSideButton.Text = "Cutting Plane";
+			this.CuttingSideButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.CuttingSideButton.UseVisualStyleBackColor = false;
+			this.CuttingSideButton.Click += new System.EventHandler(this.CuttingSideButton_Click);
 			// 
 			// label9
 			// 
@@ -294,24 +298,25 @@
 			this.pictureBox3.TabIndex = 5;
 			this.pictureBox3.TabStop = false;
 			// 
-			// HelpAboutSideButton
+			// BranchSideButton
 			// 
-			this.HelpAboutSideButton.BackColor = System.Drawing.Color.Transparent;
-			this.HelpAboutSideButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.HelpAboutSideButton.FlatAppearance.BorderSize = 0;
-			this.HelpAboutSideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.HelpAboutSideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.HelpAboutSideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.HelpAboutSideButton.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.HelpAboutSideButton.ForeColor = System.Drawing.Color.Silver;
-			this.HelpAboutSideButton.Location = new System.Drawing.Point(41, 115);
-			this.HelpAboutSideButton.Name = "HelpAboutSideButton";
-			this.HelpAboutSideButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.HelpAboutSideButton.Size = new System.Drawing.Size(130, 31);
-			this.HelpAboutSideButton.TabIndex = 4;
-			this.HelpAboutSideButton.Text = "Branch and Bound";
-			this.HelpAboutSideButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.HelpAboutSideButton.UseVisualStyleBackColor = false;
+			this.BranchSideButton.BackColor = System.Drawing.Color.Transparent;
+			this.BranchSideButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.BranchSideButton.FlatAppearance.BorderSize = 0;
+			this.BranchSideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.BranchSideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.BranchSideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.BranchSideButton.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BranchSideButton.ForeColor = System.Drawing.Color.Silver;
+			this.BranchSideButton.Location = new System.Drawing.Point(41, 115);
+			this.BranchSideButton.Name = "BranchSideButton";
+			this.BranchSideButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.BranchSideButton.Size = new System.Drawing.Size(130, 31);
+			this.BranchSideButton.TabIndex = 4;
+			this.BranchSideButton.Text = "Branch and Bound";
+			this.BranchSideButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.BranchSideButton.UseVisualStyleBackColor = false;
+			this.BranchSideButton.Click += new System.EventHandler(this.BranchSideButton_Click);
 			// 
 			// pictureBox2
 			// 
@@ -324,24 +329,25 @@
 			this.pictureBox2.TabIndex = 3;
 			this.pictureBox2.TabStop = false;
 			// 
-			// SolveIPModelSideButton
+			// DualSideButton
 			// 
-			this.SolveIPModelSideButton.BackColor = System.Drawing.Color.Transparent;
-			this.SolveIPModelSideButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.SolveIPModelSideButton.FlatAppearance.BorderSize = 0;
-			this.SolveIPModelSideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.SolveIPModelSideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.SolveIPModelSideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.SolveIPModelSideButton.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SolveIPModelSideButton.ForeColor = System.Drawing.Color.Silver;
-			this.SolveIPModelSideButton.Location = new System.Drawing.Point(41, 78);
-			this.SolveIPModelSideButton.Name = "SolveIPModelSideButton";
-			this.SolveIPModelSideButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.SolveIPModelSideButton.Size = new System.Drawing.Size(130, 31);
-			this.SolveIPModelSideButton.TabIndex = 2;
-			this.SolveIPModelSideButton.Text = "Dual Simplex";
-			this.SolveIPModelSideButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.SolveIPModelSideButton.UseVisualStyleBackColor = false;
+			this.DualSideButton.BackColor = System.Drawing.Color.Transparent;
+			this.DualSideButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.DualSideButton.FlatAppearance.BorderSize = 0;
+			this.DualSideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.DualSideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.DualSideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.DualSideButton.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.DualSideButton.ForeColor = System.Drawing.Color.Silver;
+			this.DualSideButton.Location = new System.Drawing.Point(41, 78);
+			this.DualSideButton.Name = "DualSideButton";
+			this.DualSideButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.DualSideButton.Size = new System.Drawing.Size(130, 31);
+			this.DualSideButton.TabIndex = 2;
+			this.DualSideButton.Text = "Dual Simplex";
+			this.DualSideButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.DualSideButton.UseVisualStyleBackColor = false;
+			this.DualSideButton.Click += new System.EventHandler(this.DualSideButton_Click);
 			// 
 			// pictureBox1
 			// 
@@ -354,24 +360,25 @@
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 
-			// SolveLPModelSideButton
+			// PrimalSideButton
 			// 
-			this.SolveLPModelSideButton.BackColor = System.Drawing.Color.Transparent;
-			this.SolveLPModelSideButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.SolveLPModelSideButton.FlatAppearance.BorderSize = 0;
-			this.SolveLPModelSideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.SolveLPModelSideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.SolveLPModelSideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.SolveLPModelSideButton.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SolveLPModelSideButton.ForeColor = System.Drawing.Color.Silver;
-			this.SolveLPModelSideButton.Location = new System.Drawing.Point(41, 41);
-			this.SolveLPModelSideButton.Name = "SolveLPModelSideButton";
-			this.SolveLPModelSideButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.SolveLPModelSideButton.Size = new System.Drawing.Size(130, 31);
-			this.SolveLPModelSideButton.TabIndex = 0;
-			this.SolveLPModelSideButton.Text = "Primal Simplex";
-			this.SolveLPModelSideButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.SolveLPModelSideButton.UseVisualStyleBackColor = false;
+			this.PrimalSideButton.BackColor = System.Drawing.Color.Transparent;
+			this.PrimalSideButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.PrimalSideButton.FlatAppearance.BorderSize = 0;
+			this.PrimalSideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.PrimalSideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.PrimalSideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.PrimalSideButton.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.PrimalSideButton.ForeColor = System.Drawing.Color.Silver;
+			this.PrimalSideButton.Location = new System.Drawing.Point(41, 41);
+			this.PrimalSideButton.Name = "PrimalSideButton";
+			this.PrimalSideButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.PrimalSideButton.Size = new System.Drawing.Size(130, 31);
+			this.PrimalSideButton.TabIndex = 0;
+			this.PrimalSideButton.Text = "Primal Simplex";
+			this.PrimalSideButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.PrimalSideButton.UseVisualStyleBackColor = false;
+			this.PrimalSideButton.Click += new System.EventHandler(this.PrimalSideButton_Click);
 			// 
 			// LogoBox
 			// 
@@ -417,10 +424,10 @@
 			this.ModelViewTextBox.BackColor = System.Drawing.Color.Black;
 			this.ModelViewTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ModelViewTextBox.ForeColor = System.Drawing.Color.White;
-			this.ModelViewTextBox.Location = new System.Drawing.Point(5, 140);
+			this.ModelViewTextBox.Location = new System.Drawing.Point(5, 130);
 			this.ModelViewTextBox.Multiline = true;
 			this.ModelViewTextBox.Name = "ModelViewTextBox";
-			this.ModelViewTextBox.Size = new System.Drawing.Size(777, 146);
+			this.ModelViewTextBox.Size = new System.Drawing.Size(779, 146);
 			this.ModelViewTextBox.TabIndex = 14;
 			this.ModelViewTextBox.Text = "No Model Loaded Yet. Click \"Load Model\" to view model.";
 			// 
@@ -463,11 +470,7 @@
 			// panel4
 			// 
 			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.panel4.Controls.Add(this.radioButton5);
-			this.panel4.Controls.Add(this.radioButton4);
-			this.panel4.Controls.Add(this.radioButton3);
-			this.panel4.Controls.Add(this.radioButton2);
-			this.panel4.Controls.Add(this.radioButton1);
+			this.panel4.Controls.Add(this.AlgorthmSelectGroupBox);
 			this.panel4.Controls.Add(this.button3);
 			this.panel4.Controls.Add(this.label3);
 			this.panel4.Controls.Add(this.label4);
@@ -475,106 +478,6 @@
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(787, 290);
 			this.panel4.TabIndex = 1;
-			// 
-			// radioButton5
-			// 
-			this.radioButton5.AutoSize = true;
-			this.radioButton5.BackColor = System.Drawing.Color.Transparent;
-			this.radioButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.radioButton5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
-			this.radioButton5.FlatAppearance.BorderSize = 3;
-			this.radioButton5.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(164)))));
-			this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.radioButton5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioButton5.ForeColor = System.Drawing.Color.White;
-			this.radioButton5.Location = new System.Drawing.Point(5, 178);
-			this.radioButton5.Name = "radioButton5";
-			this.radioButton5.Size = new System.Drawing.Size(95, 22);
-			this.radioButton5.TabIndex = 22;
-			this.radioButton5.TabStop = true;
-			this.radioButton5.Text = "Knapsack";
-			this.radioButton5.UseVisualStyleBackColor = false;
-			this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
-			// 
-			// radioButton4
-			// 
-			this.radioButton4.AutoSize = true;
-			this.radioButton4.BackColor = System.Drawing.Color.Transparent;
-			this.radioButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.radioButton4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
-			this.radioButton4.FlatAppearance.BorderSize = 3;
-			this.radioButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(164)))));
-			this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.radioButton4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioButton4.ForeColor = System.Drawing.Color.White;
-			this.radioButton4.Location = new System.Drawing.Point(5, 152);
-			this.radioButton4.Name = "radioButton4";
-			this.radioButton4.Size = new System.Drawing.Size(118, 22);
-			this.radioButton4.TabIndex = 21;
-			this.radioButton4.TabStop = true;
-			this.radioButton4.Text = "Cutting Plane";
-			this.radioButton4.UseVisualStyleBackColor = false;
-			this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
-			// 
-			// radioButton3
-			// 
-			this.radioButton3.AutoSize = true;
-			this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-			this.radioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.radioButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
-			this.radioButton3.FlatAppearance.BorderSize = 3;
-			this.radioButton3.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(164)))));
-			this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.radioButton3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioButton3.ForeColor = System.Drawing.Color.White;
-			this.radioButton3.Location = new System.Drawing.Point(5, 126);
-			this.radioButton3.Name = "radioButton3";
-			this.radioButton3.Size = new System.Drawing.Size(153, 22);
-			this.radioButton3.TabIndex = 20;
-			this.radioButton3.TabStop = true;
-			this.radioButton3.Text = "Branch and Bound";
-			this.radioButton3.UseVisualStyleBackColor = false;
-			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-			// 
-			// radioButton2
-			// 
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-			this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.radioButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
-			this.radioButton2.FlatAppearance.BorderSize = 3;
-			this.radioButton2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(164)))));
-			this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.radioButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioButton2.ForeColor = System.Drawing.Color.White;
-			this.radioButton2.Location = new System.Drawing.Point(5, 100);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(117, 22);
-			this.radioButton2.TabIndex = 19;
-			this.radioButton2.TabStop = true;
-			this.radioButton2.Text = "Dual Simplex";
-			this.radioButton2.UseVisualStyleBackColor = false;
-			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-			// 
-			// radioButton1
-			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-			this.radioButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.radioButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
-			this.radioButton1.FlatAppearance.BorderSize = 3;
-			this.radioButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(164)))));
-			this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioButton1.ForeColor = System.Drawing.Color.White;
-			this.radioButton1.Location = new System.Drawing.Point(7, 74);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(130, 22);
-			this.radioButton1.TabIndex = 18;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "Primal Simplex";
-			this.radioButton1.UseVisualStyleBackColor = false;
-			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
 			// button3
 			// 
@@ -590,6 +493,7 @@
 			this.button3.TabIndex = 17;
 			this.button3.Text = "Solve Model";
 			this.button3.UseVisualStyleBackColor = false;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// label3
 			// 
@@ -613,6 +517,84 @@
 			this.label4.TabIndex = 15;
 			this.label4.Text = "Algorithm Select";
 			this.label4.Click += new System.EventHandler(this.label4_Click);
+			// 
+			// AlgorthmSelectGroupBox
+			// 
+			this.AlgorthmSelectGroupBox.Controls.Add(this.KnapsackRadioButton);
+			this.AlgorthmSelectGroupBox.Controls.Add(this.CuttinRadioButton);
+			this.AlgorthmSelectGroupBox.Controls.Add(this.BranchRadioButton);
+			this.AlgorthmSelectGroupBox.Controls.Add(this.DualRadioButton);
+			this.AlgorthmSelectGroupBox.Controls.Add(this.PrimalRadioButton);
+			this.AlgorthmSelectGroupBox.Location = new System.Drawing.Point(5, 63);
+			this.AlgorthmSelectGroupBox.Name = "AlgorthmSelectGroupBox";
+			this.AlgorthmSelectGroupBox.Size = new System.Drawing.Size(777, 175);
+			this.AlgorthmSelectGroupBox.TabIndex = 18;
+			this.AlgorthmSelectGroupBox.TabStop = false;
+			// 
+			// PrimalRadioButton
+			// 
+			this.PrimalRadioButton.AutoSize = true;
+			this.PrimalRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.PrimalRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.PrimalRadioButton.Location = new System.Drawing.Point(11, 23);
+			this.PrimalRadioButton.Name = "PrimalRadioButton";
+			this.PrimalRadioButton.Size = new System.Drawing.Size(131, 22);
+			this.PrimalRadioButton.TabIndex = 23;
+			this.PrimalRadioButton.TabStop = true;
+			this.PrimalRadioButton.Text = "Primal Simplex";
+			this.PrimalRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// DualRadioButton
+			// 
+			this.DualRadioButton.AutoSize = true;
+			this.DualRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.DualRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.DualRadioButton.Location = new System.Drawing.Point(11, 51);
+			this.DualRadioButton.Name = "DualRadioButton";
+			this.DualRadioButton.Size = new System.Drawing.Size(118, 22);
+			this.DualRadioButton.TabIndex = 24;
+			this.DualRadioButton.TabStop = true;
+			this.DualRadioButton.Text = "Dual Simplex";
+			this.DualRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// BranchRadioButton
+			// 
+			this.BranchRadioButton.AutoSize = true;
+			this.BranchRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BranchRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.BranchRadioButton.Location = new System.Drawing.Point(11, 79);
+			this.BranchRadioButton.Name = "BranchRadioButton";
+			this.BranchRadioButton.Size = new System.Drawing.Size(154, 22);
+			this.BranchRadioButton.TabIndex = 25;
+			this.BranchRadioButton.TabStop = true;
+			this.BranchRadioButton.Text = "Branch and Bound";
+			this.BranchRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// CuttinRadioButton
+			// 
+			this.CuttinRadioButton.AutoSize = true;
+			this.CuttinRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.CuttinRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.CuttinRadioButton.Location = new System.Drawing.Point(11, 107);
+			this.CuttinRadioButton.Name = "CuttinRadioButton";
+			this.CuttinRadioButton.Size = new System.Drawing.Size(119, 22);
+			this.CuttinRadioButton.TabIndex = 26;
+			this.CuttinRadioButton.TabStop = true;
+			this.CuttinRadioButton.Text = "Cutting Plane";
+			this.CuttinRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// KnapsackRadioButton
+			// 
+			this.KnapsackRadioButton.AutoSize = true;
+			this.KnapsackRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.KnapsackRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.KnapsackRadioButton.Location = new System.Drawing.Point(11, 135);
+			this.KnapsackRadioButton.Name = "KnapsackRadioButton";
+			this.KnapsackRadioButton.Size = new System.Drawing.Size(96, 22);
+			this.KnapsackRadioButton.TabIndex = 27;
+			this.KnapsackRadioButton.TabStop = true;
+			this.KnapsackRadioButton.Text = "Knapsack";
+			this.KnapsackRadioButton.UseVisualStyleBackColor = true;
 			// 
 			// ModelInputForm
 			// 
@@ -642,6 +624,8 @@
 			this.panel3.PerformLayout();
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
+			this.AlgorthmSelectGroupBox.ResumeLayout(false);
+			this.AlgorthmSelectGroupBox.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -654,16 +638,16 @@
 		private System.Windows.Forms.Button HomeButton;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.PictureBox pictureBox3;
-		private System.Windows.Forms.Button HelpAboutSideButton;
+		private System.Windows.Forms.Button BranchSideButton;
 		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.Button SolveIPModelSideButton;
+		private System.Windows.Forms.Button DualSideButton;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Button SolveLPModelSideButton;
+		private System.Windows.Forms.Button PrimalSideButton;
 		private System.Windows.Forms.PictureBox LogoBox;
 		private System.Windows.Forms.PictureBox pictureBox7;
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button KnapsackSideButton;
 		private System.Windows.Forms.PictureBox pictureBox8;
-		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Button CuttingSideButton;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -676,11 +660,12 @@
 		private System.Windows.Forms.TextBox ModelViewTextBox;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.RadioButton radioButton1;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.RadioButton radioButton5;
-		private System.Windows.Forms.RadioButton radioButton4;
-		private System.Windows.Forms.RadioButton radioButton3;
-		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.GroupBox AlgorthmSelectGroupBox;
+		private System.Windows.Forms.RadioButton KnapsackRadioButton;
+		private System.Windows.Forms.RadioButton CuttinRadioButton;
+		private System.Windows.Forms.RadioButton BranchRadioButton;
+		private System.Windows.Forms.RadioButton DualRadioButton;
+		private System.Windows.Forms.RadioButton PrimalRadioButton;
 	}
 }

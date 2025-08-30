@@ -178,7 +178,7 @@
 			// label4
 			// 
 			this.label4.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
+			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
 			this.label4.Location = new System.Drawing.Point(3, 103);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(248, 74);
@@ -190,9 +190,9 @@
 			// 
 			this.label3.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.Silver;
-			this.label3.Location = new System.Drawing.Point(77, 0);
+			this.label3.Location = new System.Drawing.Point(47, 0);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(174, 111);
+			this.label3.Size = new System.Drawing.Size(204, 72);
 			this.label3.TabIndex = 17;
 			this.label3.Text = "Optimal Objective Value";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -201,9 +201,9 @@
 			// 
 			this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(6, 29);
+			this.pictureBox4.Location = new System.Drawing.Point(6, 17);
 			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(65, 59);
+			this.pictureBox4.Size = new System.Drawing.Size(35, 43);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox4.TabIndex = 17;
 			this.pictureBox4.TabStop = false;

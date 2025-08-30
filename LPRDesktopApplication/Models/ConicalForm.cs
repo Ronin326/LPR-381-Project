@@ -114,8 +114,8 @@ namespace LPRDesktopApplication.Models
 					case "+": varConstraints.Append($"{varName} ≥ 0; "); break;
 					case "-": varConstraints.Append($"{varName} ≤ 0; "); break;
 					case "urs": varConstraints.Append($"{varName} unrestricted; "); break;
-					case "int": varConstraints.Append($"{varName} ∈ Z; "); break;
-					case "bin": varConstraints.Append($"{varName} ∈ {{0,1}}; "); break;
+					case "int": varConstraints.Append($"{varName} E Z; "); break;
+					case "bin": varConstraints.Append($"{varName} E {{0,1}}; "); break;
 					default: varConstraints.Append($"{varName} unknown; "); break;
 				}
 			}
