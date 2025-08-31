@@ -840,7 +840,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Panel panel6;
 		private System.Windows.Forms.Panel panel5;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Label label4;
@@ -848,11 +847,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label19;
-		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.Label label20;
-		private System.Windows.Forms.ComboBox comboBox4;
-		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.Label label16;
