@@ -73,5 +73,10 @@ namespace LPRDesktopApplication
 			form.ShowDialog();
 			this.Close();
 		}
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+			HomeButton.ForeColor = Color.Orange;
+		}
 	}
 }

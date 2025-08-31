@@ -81,7 +81,7 @@ namespace LPRDesktopApplication.Forms
 			Data.DataHandler.OpenModel();
 
 			//Set textBox text to model
-			//ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
+			ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
 		}
 
 		private void button6_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace LPRDesktopApplication.Forms
 			Data.DataHandler.OpenModel();
 
 			//Set textBox text to model
-			//ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
+			ModelViewTextBox.Text = Business.Logic.ReturnCononicalForm();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -131,6 +131,12 @@ namespace LPRDesktopApplication.Forms
 				{
 					Console.WriteLine("Primal Simplex Selected");
 					Program.AlgorithmSelected = Algorithms.PrimalSimplex;
+					Models.PrimalSimplex.SolveFromFormattedCanonical();
+					Console.WriteLine("Optimal Z Value:",Program.OptimalZValue);
+					SolutionForm form = new SolutionForm();
+					this.Hide();
+					form.ShowDialog();
+					this.Close();
 				}
 				else if (DualRadioButton.Checked)
 				{
@@ -161,6 +167,11 @@ namespace LPRDesktopApplication.Forms
 			{
 				MessageBox.Show("Please Load a Model to Solve");
 			}
+		}
+
+		private void ModelInputForm_Load(object sender, EventArgs e)
+		{
+			SolveModelButton.ForeColor = Color.Orange;
 		}
 	}
 }

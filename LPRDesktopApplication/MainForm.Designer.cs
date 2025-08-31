@@ -521,6 +521,7 @@
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Linear Programming Solver";
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.LogoBox)).EndInit();
 			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

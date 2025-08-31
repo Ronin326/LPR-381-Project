@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Models\BranchAndBoundSolver.cs" />
     <Compile Include="Models\ConicalForm.cs" />
+    <Compile Include="Models\PrimalSimplex.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ModelInputForm.resx">

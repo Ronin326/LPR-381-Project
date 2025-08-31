@@ -21,6 +21,13 @@ namespace LPRDesktopApplication
 
 		//Global List of strings for cononical form
 		public static List<string> ConicalFormLines = new List<string>();
+		public static List<string> FormattedCanonicalFormLines = new List<string>();
+
+		//Global Var for solution
+		public static string OptimalZValue = ""; 
+		public static Dictionary<string, string> OptimalVars = new Dictionary<string, string>();
+		public static List<string> Iterations = new List<string>();
+
 
 		//Global var for algoritm
 		public static Algorithms AlgorithmSelected = new Algorithms();

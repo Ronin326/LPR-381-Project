@@ -33,18 +33,15 @@
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.label10 = new System.Windows.Forms.Label();
+			this.OptimalXValuesLabel = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.panel5 = new System.Windows.Forms.Panel();
-			this.label4 = new System.Windows.Forms.Label();
+			this.OptimalZValueLabel = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
@@ -63,6 +60,7 @@
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.LogoBox = new System.Windows.Forms.PictureBox();
+			this.IterationListView = new System.Windows.Forms.ListView();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -71,7 +69,6 @@
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			this.panel4.SuspendLayout();
-			this.tabControl1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -122,7 +119,7 @@
 			// panel6
 			// 
 			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.panel6.Controls.Add(this.label10);
+			this.panel6.Controls.Add(this.OptimalXValuesLabel);
 			this.panel6.Controls.Add(this.label11);
 			this.panel6.Controls.Add(this.pictureBox5);
 			this.panel6.Location = new System.Drawing.Point(263, 3);
@@ -130,16 +127,16 @@
 			this.panel6.Size = new System.Drawing.Size(515, 177);
 			this.panel6.TabIndex = 1;
 			// 
-			// label10
+			// OptimalXValuesLabel
 			// 
-			this.label10.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
-			this.label10.Location = new System.Drawing.Point(3, 49);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(509, 128);
-			this.label10.TabIndex = 21;
-			this.label10.Text = "$";
-			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.OptimalXValuesLabel.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.OptimalXValuesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
+			this.OptimalXValuesLabel.Location = new System.Drawing.Point(3, 49);
+			this.OptimalXValuesLabel.Name = "OptimalXValuesLabel";
+			this.OptimalXValuesLabel.Size = new System.Drawing.Size(509, 128);
+			this.OptimalXValuesLabel.TabIndex = 21;
+			this.OptimalXValuesLabel.Text = "$";
+			this.OptimalXValuesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label11
 			// 
@@ -167,7 +164,7 @@
 			// panel5
 			// 
 			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.panel5.Controls.Add(this.label4);
+			this.panel5.Controls.Add(this.OptimalZValueLabel);
 			this.panel5.Controls.Add(this.label3);
 			this.panel5.Controls.Add(this.pictureBox4);
 			this.panel5.Location = new System.Drawing.Point(3, 3);
@@ -175,16 +172,16 @@
 			this.panel5.Size = new System.Drawing.Size(254, 177);
 			this.panel5.TabIndex = 0;
 			// 
-			// label4
+			// OptimalZValueLabel
 			// 
-			this.label4.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label4.Location = new System.Drawing.Point(3, 103);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(248, 74);
-			this.label4.TabIndex = 18;
-			this.label4.Text = "$";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.OptimalZValueLabel.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.OptimalZValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.OptimalZValueLabel.Location = new System.Drawing.Point(1, 66);
+			this.OptimalZValueLabel.Name = "OptimalZValueLabel";
+			this.OptimalZValueLabel.Size = new System.Drawing.Size(248, 74);
+			this.OptimalZValueLabel.TabIndex = 18;
+			this.OptimalZValueLabel.Text = "$";
+			this.OptimalZValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label3
 			// 
@@ -221,47 +218,13 @@
 			// 
 			// panel4
 			// 
-			this.panel4.Controls.Add(this.tabControl1);
+			this.panel4.Controls.Add(this.IterationListView);
 			this.panel4.Controls.Add(this.button1);
 			this.panel4.Controls.Add(this.label2);
 			this.panel4.Location = new System.Drawing.Point(3, 239);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(787, 349);
 			this.panel4.TabIndex = 2;
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tabControl1.Location = new System.Drawing.Point(8, 30);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(776, 277);
-			this.tabControl1.TabIndex = 3;
-			// 
-			// tabPage1
-			// 
-			this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.tabPage1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.tabPage1.Location = new System.Drawing.Point(4, 27);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(768, 246);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Canonicle Form";
-			// 
-			// tabPage2
-			// 
-			this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.tabPage2.Location = new System.Drawing.Point(4, 27);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(768, 246);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Tablue Iterations";
 			// 
 			// button1
 			// 
@@ -505,6 +468,19 @@
 			this.LogoBox.TabIndex = 8;
 			this.LogoBox.TabStop = false;
 			// 
+			// IterationListView
+			// 
+			this.IterationListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.IterationListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.IterationListView.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.IterationListView.ForeColor = System.Drawing.Color.White;
+			this.IterationListView.HideSelection = false;
+			this.IterationListView.Location = new System.Drawing.Point(6, 30);
+			this.IterationListView.Name = "IterationListView";
+			this.IterationListView.Size = new System.Drawing.Size(778, 277);
+			this.IterationListView.TabIndex = 3;
+			this.IterationListView.UseCompatibleStateImageBehavior = false;
+			// 
 			// SolutionForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,6 +496,7 @@
 			this.Name = "SolutionForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Results";
+			this.Load += new System.EventHandler(this.SolutionForm_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
@@ -530,7 +507,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
-			this.tabControl1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -570,14 +546,12 @@
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TabPage tabPage2;
-		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label OptimalXValuesLabel;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.PictureBox pictureBox5;
-		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label OptimalZValueLabel;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.PictureBox pictureBox4;
+		private System.Windows.Forms.ListView IterationListView;
 	}
 }

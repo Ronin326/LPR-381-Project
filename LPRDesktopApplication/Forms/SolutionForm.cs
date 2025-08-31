@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LPRDesktopApplication.Forms
 {
@@ -63,6 +64,33 @@ namespace LPRDesktopApplication.Forms
 			this.Hide();
 			form.ShowDialog();
 			this.Close();
+		}
+
+		private void SolutionForm_Load(object sender, EventArgs e)
+		{
+			ResultsButton.ForeColor = Color.Orange;
+			OptimalZValueLabel.Text = "z = " + Program.OptimalZValue;
+			string OptimalXText = "";
+			int count = 0;
+			foreach(KeyValuePair<string,string> xvar in Program.OptimalVars)
+			{
+				OptimalXText += xvar.Key + " = " + xvar.Value + "     ";
+				count++;
+				if (count%4 == 0)
+				{
+					OptimalXText += "\n";
+				}
+			}
+			OptimalXValuesLabel.Text = OptimalXText;
+			Console.WriteLine("Iterations:");
+			foreach(string line in Program.Iterations)
+			{
+				Console.WriteLine(line);
+			}
+			if (Program.AlgorithmSelected == Algorithms.PrimalSimplex)
+			{
+				Business.Logic.PrimalLoadIterationsToListView(IterationListView, Program.Iterations);
+			}
 		}
 	}
 }

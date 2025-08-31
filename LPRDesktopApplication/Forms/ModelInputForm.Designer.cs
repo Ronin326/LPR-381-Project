@@ -56,15 +56,15 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.AlgorthmSelectGroupBox = new System.Windows.Forms.GroupBox();
+			this.KnapsackRadioButton = new System.Windows.Forms.RadioButton();
+			this.CuttinRadioButton = new System.Windows.Forms.RadioButton();
+			this.BranchRadioButton = new System.Windows.Forms.RadioButton();
+			this.DualRadioButton = new System.Windows.Forms.RadioButton();
+			this.PrimalRadioButton = new System.Windows.Forms.RadioButton();
 			this.button3 = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.AlgorthmSelectGroupBox = new System.Windows.Forms.GroupBox();
-			this.PrimalRadioButton = new System.Windows.Forms.RadioButton();
-			this.DualRadioButton = new System.Windows.Forms.RadioButton();
-			this.BranchRadioButton = new System.Windows.Forms.RadioButton();
-			this.CuttinRadioButton = new System.Windows.Forms.RadioButton();
-			this.KnapsackRadioButton = new System.Windows.Forms.RadioButton();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -479,6 +479,84 @@
 			this.panel4.Size = new System.Drawing.Size(787, 290);
 			this.panel4.TabIndex = 1;
 			// 
+			// AlgorthmSelectGroupBox
+			// 
+			this.AlgorthmSelectGroupBox.Controls.Add(this.KnapsackRadioButton);
+			this.AlgorthmSelectGroupBox.Controls.Add(this.CuttinRadioButton);
+			this.AlgorthmSelectGroupBox.Controls.Add(this.BranchRadioButton);
+			this.AlgorthmSelectGroupBox.Controls.Add(this.DualRadioButton);
+			this.AlgorthmSelectGroupBox.Controls.Add(this.PrimalRadioButton);
+			this.AlgorthmSelectGroupBox.Location = new System.Drawing.Point(5, 63);
+			this.AlgorthmSelectGroupBox.Name = "AlgorthmSelectGroupBox";
+			this.AlgorthmSelectGroupBox.Size = new System.Drawing.Size(777, 175);
+			this.AlgorthmSelectGroupBox.TabIndex = 18;
+			this.AlgorthmSelectGroupBox.TabStop = false;
+			// 
+			// KnapsackRadioButton
+			// 
+			this.KnapsackRadioButton.AutoSize = true;
+			this.KnapsackRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.KnapsackRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.KnapsackRadioButton.Location = new System.Drawing.Point(11, 135);
+			this.KnapsackRadioButton.Name = "KnapsackRadioButton";
+			this.KnapsackRadioButton.Size = new System.Drawing.Size(96, 22);
+			this.KnapsackRadioButton.TabIndex = 27;
+			this.KnapsackRadioButton.TabStop = true;
+			this.KnapsackRadioButton.Text = "Knapsack";
+			this.KnapsackRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// CuttinRadioButton
+			// 
+			this.CuttinRadioButton.AutoSize = true;
+			this.CuttinRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.CuttinRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.CuttinRadioButton.Location = new System.Drawing.Point(11, 107);
+			this.CuttinRadioButton.Name = "CuttinRadioButton";
+			this.CuttinRadioButton.Size = new System.Drawing.Size(119, 22);
+			this.CuttinRadioButton.TabIndex = 26;
+			this.CuttinRadioButton.TabStop = true;
+			this.CuttinRadioButton.Text = "Cutting Plane";
+			this.CuttinRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// BranchRadioButton
+			// 
+			this.BranchRadioButton.AutoSize = true;
+			this.BranchRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BranchRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.BranchRadioButton.Location = new System.Drawing.Point(11, 79);
+			this.BranchRadioButton.Name = "BranchRadioButton";
+			this.BranchRadioButton.Size = new System.Drawing.Size(154, 22);
+			this.BranchRadioButton.TabIndex = 25;
+			this.BranchRadioButton.TabStop = true;
+			this.BranchRadioButton.Text = "Branch and Bound";
+			this.BranchRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// DualRadioButton
+			// 
+			this.DualRadioButton.AutoSize = true;
+			this.DualRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.DualRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.DualRadioButton.Location = new System.Drawing.Point(11, 51);
+			this.DualRadioButton.Name = "DualRadioButton";
+			this.DualRadioButton.Size = new System.Drawing.Size(118, 22);
+			this.DualRadioButton.TabIndex = 24;
+			this.DualRadioButton.TabStop = true;
+			this.DualRadioButton.Text = "Dual Simplex";
+			this.DualRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// PrimalRadioButton
+			// 
+			this.PrimalRadioButton.AutoSize = true;
+			this.PrimalRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.PrimalRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.PrimalRadioButton.Location = new System.Drawing.Point(11, 23);
+			this.PrimalRadioButton.Name = "PrimalRadioButton";
+			this.PrimalRadioButton.Size = new System.Drawing.Size(131, 22);
+			this.PrimalRadioButton.TabIndex = 23;
+			this.PrimalRadioButton.TabStop = true;
+			this.PrimalRadioButton.Text = "Primal Simplex";
+			this.PrimalRadioButton.UseVisualStyleBackColor = true;
+			// 
 			// button3
 			// 
 			this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
@@ -518,84 +596,6 @@
 			this.label4.Text = "Algorithm Select";
 			this.label4.Click += new System.EventHandler(this.label4_Click);
 			// 
-			// AlgorthmSelectGroupBox
-			// 
-			this.AlgorthmSelectGroupBox.Controls.Add(this.KnapsackRadioButton);
-			this.AlgorthmSelectGroupBox.Controls.Add(this.CuttinRadioButton);
-			this.AlgorthmSelectGroupBox.Controls.Add(this.BranchRadioButton);
-			this.AlgorthmSelectGroupBox.Controls.Add(this.DualRadioButton);
-			this.AlgorthmSelectGroupBox.Controls.Add(this.PrimalRadioButton);
-			this.AlgorthmSelectGroupBox.Location = new System.Drawing.Point(5, 63);
-			this.AlgorthmSelectGroupBox.Name = "AlgorthmSelectGroupBox";
-			this.AlgorthmSelectGroupBox.Size = new System.Drawing.Size(777, 175);
-			this.AlgorthmSelectGroupBox.TabIndex = 18;
-			this.AlgorthmSelectGroupBox.TabStop = false;
-			// 
-			// PrimalRadioButton
-			// 
-			this.PrimalRadioButton.AutoSize = true;
-			this.PrimalRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.PrimalRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.PrimalRadioButton.Location = new System.Drawing.Point(11, 23);
-			this.PrimalRadioButton.Name = "PrimalRadioButton";
-			this.PrimalRadioButton.Size = new System.Drawing.Size(131, 22);
-			this.PrimalRadioButton.TabIndex = 23;
-			this.PrimalRadioButton.TabStop = true;
-			this.PrimalRadioButton.Text = "Primal Simplex";
-			this.PrimalRadioButton.UseVisualStyleBackColor = true;
-			// 
-			// DualRadioButton
-			// 
-			this.DualRadioButton.AutoSize = true;
-			this.DualRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.DualRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.DualRadioButton.Location = new System.Drawing.Point(11, 51);
-			this.DualRadioButton.Name = "DualRadioButton";
-			this.DualRadioButton.Size = new System.Drawing.Size(118, 22);
-			this.DualRadioButton.TabIndex = 24;
-			this.DualRadioButton.TabStop = true;
-			this.DualRadioButton.Text = "Dual Simplex";
-			this.DualRadioButton.UseVisualStyleBackColor = true;
-			// 
-			// BranchRadioButton
-			// 
-			this.BranchRadioButton.AutoSize = true;
-			this.BranchRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.BranchRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.BranchRadioButton.Location = new System.Drawing.Point(11, 79);
-			this.BranchRadioButton.Name = "BranchRadioButton";
-			this.BranchRadioButton.Size = new System.Drawing.Size(154, 22);
-			this.BranchRadioButton.TabIndex = 25;
-			this.BranchRadioButton.TabStop = true;
-			this.BranchRadioButton.Text = "Branch and Bound";
-			this.BranchRadioButton.UseVisualStyleBackColor = true;
-			// 
-			// CuttinRadioButton
-			// 
-			this.CuttinRadioButton.AutoSize = true;
-			this.CuttinRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.CuttinRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.CuttinRadioButton.Location = new System.Drawing.Point(11, 107);
-			this.CuttinRadioButton.Name = "CuttinRadioButton";
-			this.CuttinRadioButton.Size = new System.Drawing.Size(119, 22);
-			this.CuttinRadioButton.TabIndex = 26;
-			this.CuttinRadioButton.TabStop = true;
-			this.CuttinRadioButton.Text = "Cutting Plane";
-			this.CuttinRadioButton.UseVisualStyleBackColor = true;
-			// 
-			// KnapsackRadioButton
-			// 
-			this.KnapsackRadioButton.AutoSize = true;
-			this.KnapsackRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.KnapsackRadioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.KnapsackRadioButton.Location = new System.Drawing.Point(11, 135);
-			this.KnapsackRadioButton.Name = "KnapsackRadioButton";
-			this.KnapsackRadioButton.Size = new System.Drawing.Size(96, 22);
-			this.KnapsackRadioButton.TabIndex = 27;
-			this.KnapsackRadioButton.TabStop = true;
-			this.KnapsackRadioButton.Text = "Knapsack";
-			this.KnapsackRadioButton.UseVisualStyleBackColor = true;
-			// 
 			// ModelInputForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -610,6 +610,7 @@
 			this.Name = "ModelInputForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Linear Programming Solver";
+			this.Load += new System.EventHandler(this.ModelInputForm_Load);
 			this.panel2.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();

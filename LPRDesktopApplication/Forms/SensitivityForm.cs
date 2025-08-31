@@ -40,5 +40,10 @@ namespace LPRDesktopApplication.Forms
 			form.ShowDialog();
 			this.Close();
 		}
+
+		private void SensitivityForm_Load(object sender, EventArgs e)
+		{
+			AnalysisButton.ForeColor = Color.Orange;
+		}
 	}
 }

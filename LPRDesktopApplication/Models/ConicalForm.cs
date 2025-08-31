@@ -4,7 +4,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace LPRDesktopApplication.Models
 {
@@ -20,7 +19,7 @@ namespace LPRDesktopApplication.Models
 			public string[] SignRestrictions { get; set; }
 		}
 
-		public void GenerateConicalForm(string path)
+		public static void GenerateConicalForm(string path)
 		{
 			var lines = File.ReadAllLines(path)
 				.Where(l => !string.IsNullOrWhiteSpace(l))
@@ -32,6 +31,8 @@ namespace LPRDesktopApplication.Models
 
 			LinearProgram lp = new LinearProgram();
 			lp.IsMaximization = lines[0].Contains("max");
+
+			// Parse objective coefficients
 			var coefficients = lines[0]
 				.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
 				.Where(c => c != "max" && c != "min")
@@ -61,10 +62,11 @@ namespace LPRDesktopApplication.Models
 				.Split(new[] { ' ', '\t', ',' }, StringSplitOptions.RemoveEmptyEntries)
 				.ToArray();
 
-			// Create Conical Form
+			// =====================
+			// Canonical Form Display
+			// =====================
 			Program.ConicalFormLines.Clear();
 
-			// Objective function
 			string objLine = lp.IsMaximization ? "max z = " : "min z = ";
 			for (int i = 0; i < lp.ObjectiveCoefficients.Length; i++)
 			{
@@ -75,8 +77,7 @@ namespace LPRDesktopApplication.Models
 			}
 			Program.ConicalFormLines.Add(objLine);
 
-			// Constraints
-			int k = 1;
+			int k = 1; // for slack/artificial numbering
 			for (int i = 0; i < lp.Constraints.Count; i++)
 			{
 				var coeffs = (double[])lp.Constraints[i].Clone();
@@ -98,6 +99,7 @@ namespace LPRDesktopApplication.Models
 						: $" {(coeffs[j] >= 0 ? "+" : "-")} {Math.Abs(coeffs[j])}x{j + 1}";
 				}
 
+				// Slack or artificial variable
 				line += rel == ">=" ? $" + e{k} = {rhs}" : $" + s{k} = {rhs}";
 				k++;
 				Program.ConicalFormLines.Add(line);
@@ -119,10 +121,74 @@ namespace LPRDesktopApplication.Models
 					default: varConstraints.Append($"{varName} unknown; "); break;
 				}
 			}
-
-			Program.ConicalFormLines.Add(""); // blank line before variable constraints
+			Program.ConicalFormLines.Add("");
 			Program.ConicalFormLines.Add("Variable Constraints:");
 			Program.ConicalFormLines.Add(varConstraints.ToString().TrimEnd(' ', ';'));
+
+			// =====================
+			// Formatted Canonical Form (Table)
+			// =====================
+			Program.FormattedCanonicalFormLines.Clear();
+
+			// Determine extra variables: slack or artificial
+			List<string> extraVarNames = new List<string>();
+			for (int i = 0; i < lp.Constraints.Count; i++)
+			{
+				extraVarNames.Add(lp.Relations[i] == ">=" ? $"e{i + 1}" : $"s{i + 1}");
+			}
+
+			// Header row
+			StringBuilder header = new StringBuilder("      ");
+			for (int i = 0; i < lp.ObjectiveCoefficients.Length; i++)
+				header.Append($"{"x" + (i + 1),6}");
+			foreach (var ev in extraVarNames)
+				header.Append($"{ev,6}");
+			header.Append($"{"RHS",6}");
+			Program.FormattedCanonicalFormLines.Add(header.ToString());
+
+			// Objective row
+			StringBuilder zRow = new StringBuilder("  z  ");
+			foreach (var coef in lp.ObjectiveCoefficients)
+				zRow.Append($"{-coef,6}"); // negate for tableau
+			foreach (var ev in extraVarNames)
+				zRow.Append($"{0,6}");
+			zRow.Append($"{0,6}");
+			Program.FormattedCanonicalFormLines.Add(zRow.ToString());
+
+			// Constraint rows
+			for (int i = 0; i < lp.Constraints.Count; i++)
+			{
+				StringBuilder row = new StringBuilder($" C{i + 1} ");
+
+				double[] rowCoeffs = (double[])lp.Constraints[i].Clone();
+				double rhs = lp.RHS[i];
+				string rel = lp.Relations[i];
+
+				// Negate >= constraints
+				if (rel == ">=")
+				{
+					for (int j = 0; j < rowCoeffs.Length; j++)
+						rowCoeffs[j] *= -1;
+					rhs *= -1;
+				}
+
+				// Objective variable coefficients
+				foreach (var coef in rowCoeffs)
+					row.Append($"{coef,6}");
+
+				// Extra variables (1 for corresponding slack/artificial, 0 otherwise)
+				for (int j = 0; j < extraVarNames.Count; j++)
+					row.Append(i == j ? $"{1,6}" : $"{0,6}");
+
+				row.Append($"{rhs,6}");
+				Program.FormattedCanonicalFormLines.Add(row.ToString());
+			}
+
+			// Variable constraints (formatted)
+			Program.FormattedCanonicalFormLines.Add("");
+			Program.FormattedCanonicalFormLines.Add("Var Constraints:");
+			Program.FormattedCanonicalFormLines.Add(string.Join(" ",
+				lp.SignRestrictions.Select((t, i) => $"x{i + 1}:{t}")));
 		}
 	}
 }
