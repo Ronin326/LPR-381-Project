@@ -87,7 +87,7 @@ namespace LPRDesktopApplication.Forms
 			{
 				Console.WriteLine(line);
 			}
-			if (Program.AlgorithmSelected == Algorithms.PrimalSimplex)
+			if (Program.AlgorithmSelected == Algorithms.PrimalSimplex || Program.AlgorithmSelected == Algorithms.DualSimplex)
 			{
 				Business.Logic.PrimalLoadIterationsToListView(IterationListView, Program.Iterations);
 			}

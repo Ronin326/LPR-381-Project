@@ -142,6 +142,12 @@ namespace LPRDesktopApplication.Forms
 				{
 					Console.WriteLine("Dual Simplex Selected");
 					Program.AlgorithmSelected = Algorithms.DualSimplex;
+					Models.DualSimplex.SolveFromFormattedCanonical();
+					Console.WriteLine("Optimal Z Value:", Program.OptimalZValue);
+					SolutionForm form = new SolutionForm();
+					this.Hide();
+					form.ShowDialog();
+					this.Close();
 				}
 				else if (BranchRadioButton.Checked)
 				{
