@@ -167,8 +167,6 @@ namespace LPRDesktopApplication.Forms
 					try
 					{
 						BranchAndBound.Solve(); // No parameter needed now
-
-						MessageBox.Show("Branch & Bound solved successfully. Check Iterations for details.");
 					}
 					catch (Exception ex)
 					{
@@ -184,6 +182,33 @@ namespace LPRDesktopApplication.Forms
 				{
 					Console.WriteLine("Cutting Plane Selected");
 					Program.AlgorithmSelected = Algorithms.CuttingPlane;
+
+					// Make sure the relaxed model is solved first
+					Models.RelaxedModel.SolveFromFormattedCanonical();
+
+					// Print the relaxed solution
+					foreach (string line in Program.RelaxedOptimalFormattedLines)
+						Console.WriteLine(line);
+
+					try
+					{
+						var result = CuttingPlane.Solve(); // Call Cutting Plane
+						foreach (string line in result.IterationLogs)
+							Console.WriteLine(line);
+
+						Console.WriteLine("Optimal Z Value: " + result.OptimalValue);
+						if (result.OptimalSolution != null)
+							Console.WriteLine("Optimal Solution: [" + string.Join(", ", result.OptimalSolution.Select(x => x.ToString("0.##"))) + "]");
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Error: " + ex.Message);
+					}
+
+					SolutionForm form = new SolutionForm();
+					this.Hide();
+					form.ShowDialog();
+					this.Close();
 				}
 				else if (KnapsackRadioButton.Checked)
 				{

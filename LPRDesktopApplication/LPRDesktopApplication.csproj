@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Models\BranchAndBoundSolver.cs" />
     <Compile Include="Models\ConicalForm.cs" />
+    <Compile Include="Models\CuttingPlane.cs" />
     <Compile Include="Models\DualSimplex.cs" />
     <Compile Include="Models\PrimalSimplex.cs" />
     <Compile Include="Models\RelaxedModel.cs" />

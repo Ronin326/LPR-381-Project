@@ -114,7 +114,7 @@ namespace LPRDesktopApplication.Business
 			listView.Items.Clear();
 
 			// Only one column
-			listView.Columns.Add("", 600); // adjust width as needed
+			listView.Columns.Add("", 700); // adjust width as needed
 
 			// Load iterations
 			foreach (string line in iterations)
@@ -122,7 +122,7 @@ namespace LPRDesktopApplication.Business
 				ListViewItem item = new ListViewItem(line);
 
 				// Highlight Root: Z lines in orange
-				if (line.StartsWith("Root: Z"))
+				if (line.StartsWith("Root: Z") || line.StartsWith("Iteration"))
 				{
 					item.ForeColor = Color.Orange;
 					item.Font = new Font(listView.Font, FontStyle.Bold);
