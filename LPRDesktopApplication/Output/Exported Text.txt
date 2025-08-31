@@ -1,0 +1,142 @@
+Optimal Z Value:
+z = 15
+
+Optimal X values:
+x1: 0
+x2: 1
+x3: 1
+x4: 1
+x5: 0
+x6: 1
+
+Iterations:
+Ranking by | value/weight | ratio
+x3 | 0,5
+x6 | 0,4
+x2 | 0,375
+x4 | 0,357143
+x5 | 0,2
+x1 | 0,181818
+
+Sub Prob | 0     | Value=  0 | Weight=  0 | Solution=[0,0,0,0,0,0]
+Sub Prob | 0.2   | Value=  0 | Weight=  0 | Solution=[0,0,0,0,0,0]
+Sub Prob | 0.2.2 | Value=  0 | Weight=  0 | Solution=[0,0,0,0,0,0]
+Sub Prob | 0.2.2.2 | Value=  0 | Weight=  0 | Solution=[0,0,0,0,0,0]
+Sub Prob | 0.2.2.2.2 | Value=  0 | Weight=  0 | Solution=[0,0,0,0,0,0]
+Sub Prob | 0.2.2.2.2.2 | Value=  0 | Weight=  0 | Solution=[0,0,0,0,0,0]
+Sub Prob | 0.2.2.2.2.2.2 | Value=  0 | Weight=  0 | Solution=[0,0,0,0,0,0]
+Sub Prob | 0.2.2.2.2.2.1 | Value=  2 | Weight= 11 | Solution=[1,0,0,0,0,0]
+Sub Prob | 0.2.2.2.2.1 | Value=  2 | Weight= 10 | Solution=[0,0,0,0,1,0]
+Sub Prob | 0.2.2.2.2.1.2 | Value=  2 | Weight= 10 | Solution=[0,0,0,0,1,0]
+Sub Prob | 0.2.2.2.2.1.1 | Value=  4 | Weight= 21 | Solution=[1,0,0,0,1,0]
+Sub Prob | 0.2.2.2.1 | Value=  5 | Weight= 14 | Solution=[0,0,0,1,0,0]
+Sub Prob | 0.2.2.2.1.2 | Value=  5 | Weight= 14 | Solution=[0,0,0,1,0,0]
+Sub Prob | 0.2.2.2.1.2.2 | Value=  5 | Weight= 14 | Solution=[0,0,0,1,0,0]
+Sub Prob | 0.2.2.2.1.2.1 | Value=  7 | Weight= 25 | Solution=[1,0,0,1,0,0]
+Sub Prob | 0.2.2.2.1.1 | Value=  7 | Weight= 24 | Solution=[0,0,0,1,1,0]
+Sub Prob | 0.2.2.2.1.1.2 | Value=  7 | Weight= 24 | Solution=[0,0,0,1,1,0]
+Sub Prob | 0.2.2.2.1.1.1 | Value=  9 | Weight= 35 | Solution=[1,0,0,1,1,0]
+Sub Prob | 0.2.2.1 | Value=  3 | Weight=  8 | Solution=[0,1,0,0,0,0]
+Sub Prob | 0.2.2.1.2 | Value=  3 | Weight=  8 | Solution=[0,1,0,0,0,0]
+Sub Prob | 0.2.2.1.2.2 | Value=  3 | Weight=  8 | Solution=[0,1,0,0,0,0]
+Sub Prob | 0.2.2.1.2.2.2 | Value=  3 | Weight=  8 | Solution=[0,1,0,0,0,0]
+Sub Prob | 0.2.2.1.2.2.1 | Value=  5 | Weight= 19 | Solution=[1,1,0,0,0,0]
+Sub Prob | 0.2.2.1.2.1 | Value=  5 | Weight= 18 | Solution=[0,1,0,0,1,0]
+Sub Prob | 0.2.2.1.2.1.2 | Value=  5 | Weight= 18 | Solution=[0,1,0,0,1,0]
+Sub Prob | 0.2.2.1.2.1.1 | Value=  7 | Weight= 29 | Solution=[1,1,0,0,1,0]
+Sub Prob | 0.2.2.1.1 | Value=  8 | Weight= 22 | Solution=[0,1,0,1,0,0]
+Sub Prob | 0.2.2.1.1.2 | Value=  8 | Weight= 22 | Solution=[0,1,0,1,0,0]
+Sub Prob | 0.2.2.1.1.2.2 | Value=  8 | Weight= 22 | Solution=[0,1,0,1,0,0]
+Sub Prob | 0.2.2.1.1.2.1 | Value= 10 | Weight= 33 | Solution=[1,1,0,1,0,0]
+Sub Prob | 0.2.2.1.1.1 | Value= 10 | Weight= 32 | Solution=[0,1,0,1,1,0]
+Sub Prob | 0.2.2.1.1.1.2 | Value= 10 | Weight= 32 | Solution=[0,1,0,1,1,0]
+Sub Prob | 0.2.1 | Value=  4 | Weight= 10 | Solution=[0,0,0,0,0,1]
+Sub Prob | 0.2.1.2 | Value=  4 | Weight= 10 | Solution=[0,0,0,0,0,1]
+Sub Prob | 0.2.1.2.2 | Value=  4 | Weight= 10 | Solution=[0,0,0,0,0,1]
+Sub Prob | 0.2.1.2.2.2 | Value=  4 | Weight= 10 | Solution=[0,0,0,0,0,1]
+Sub Prob | 0.2.1.2.2.2.2 | Value=  4 | Weight= 10 | Solution=[0,0,0,0,0,1]
+Sub Prob | 0.2.1.2.2.2.1 | Value=  6 | Weight= 21 | Solution=[1,0,0,0,0,1]
+Sub Prob | 0.2.1.2.2.1 | Value=  6 | Weight= 20 | Solution=[0,0,0,0,1,1]
+Sub Prob | 0.2.1.2.2.1.2 | Value=  6 | Weight= 20 | Solution=[0,0,0,0,1,1]
+Sub Prob | 0.2.1.2.2.1.1 | Value=  8 | Weight= 31 | Solution=[1,0,0,0,1,1]
+Sub Prob | 0.2.1.2.1 | Value=  9 | Weight= 24 | Solution=[0,0,0,1,0,1]
+Sub Prob | 0.2.1.2.1.2 | Value=  9 | Weight= 24 | Solution=[0,0,0,1,0,1]
+Sub Prob | 0.2.1.2.1.2.2 | Value=  9 | Weight= 24 | Solution=[0,0,0,1,0,1]
+Sub Prob | 0.2.1.2.1.2.1 | Value= 11 | Weight= 35 | Solution=[1,0,0,1,0,1]
+Sub Prob | 0.2.1.2.1.1 | Value= 11 | Weight= 34 | Solution=[0,0,0,1,1,1]
+Sub Prob | 0.2.1.2.1.1.2 | Value= 11 | Weight= 34 | Solution=[0,0,0,1,1,1]
+Sub Prob | 0.2.1.1 | Value=  7 | Weight= 18 | Solution=[0,1,0,0,0,1]
+Sub Prob | 0.2.1.1.2 | Value=  7 | Weight= 18 | Solution=[0,1,0,0,0,1]
+Sub Prob | 0.2.1.1.2.2 | Value=  7 | Weight= 18 | Solution=[0,1,0,0,0,1]
+Sub Prob | 0.2.1.1.2.2.2 | Value=  7 | Weight= 18 | Solution=[0,1,0,0,0,1]
+Sub Prob | 0.2.1.1.2.2.1 | Value=  9 | Weight= 29 | Solution=[1,1,0,0,0,1]
+Sub Prob | 0.2.1.1.2.1 | Value=  9 | Weight= 28 | Solution=[0,1,0,0,1,1]
+Sub Prob | 0.2.1.1.2.1.2 | Value=  9 | Weight= 28 | Solution=[0,1,0,0,1,1]
+Sub Prob | 0.2.1.1.2.1.1 | Value= 11 | Weight= 39 | Solution=[1,1,0,0,1,1]
+Sub Prob | 0.2.1.1.1 | Value= 12 | Weight= 32 | Solution=[0,1,0,1,0,1]
+Sub Prob | 0.2.1.1.1.2 | Value= 12 | Weight= 32 | Solution=[0,1,0,1,0,1]
+Sub Prob | 0.2.1.1.1.2.2 | Value= 12 | Weight= 32 | Solution=[0,1,0,1,0,1]
+Sub Prob | 0.1   | Value=  3 | Weight=  6 | Solution=[0,0,1,0,0,0]
+Sub Prob | 0.1.2 | Value=  3 | Weight=  6 | Solution=[0,0,1,0,0,0]
+Sub Prob | 0.1.2.2 | Value=  3 | Weight=  6 | Solution=[0,0,1,0,0,0]
+Sub Prob | 0.1.2.2.2 | Value=  3 | Weight=  6 | Solution=[0,0,1,0,0,0]
+Sub Prob | 0.1.2.2.2.2 | Value=  3 | Weight=  6 | Solution=[0,0,1,0,0,0]
+Sub Prob | 0.1.2.2.2.2.2 | Value=  3 | Weight=  6 | Solution=[0,0,1,0,0,0]
+Sub Prob | 0.1.2.2.2.2.1 | Value=  5 | Weight= 17 | Solution=[1,0,1,0,0,0]
+Sub Prob | 0.1.2.2.2.1 | Value=  5 | Weight= 16 | Solution=[0,0,1,0,1,0]
+Sub Prob | 0.1.2.2.2.1.2 | Value=  5 | Weight= 16 | Solution=[0,0,1,0,1,0]
+Sub Prob | 0.1.2.2.2.1.1 | Value=  7 | Weight= 27 | Solution=[1,0,1,0,1,0]
+Sub Prob | 0.1.2.2.1 | Value=  8 | Weight= 20 | Solution=[0,0,1,1,0,0]
+Sub Prob | 0.1.2.2.1.2 | Value=  8 | Weight= 20 | Solution=[0,0,1,1,0,0]
+Sub Prob | 0.1.2.2.1.2.2 | Value=  8 | Weight= 20 | Solution=[0,0,1,1,0,0]
+Sub Prob | 0.1.2.2.1.2.1 | Value= 10 | Weight= 31 | Solution=[1,0,1,1,0,0]
+Sub Prob | 0.1.2.2.1.1 | Value= 10 | Weight= 30 | Solution=[0,0,1,1,1,0]
+Sub Prob | 0.1.2.2.1.1.2 | Value= 10 | Weight= 30 | Solution=[0,0,1,1,1,0]
+Sub Prob | 0.1.2.1 | Value=  6 | Weight= 14 | Solution=[0,1,1,0,0,0]
+Sub Prob | 0.1.2.1.2 | Value=  6 | Weight= 14 | Solution=[0,1,1,0,0,0]
+Sub Prob | 0.1.2.1.2.2 | Value=  6 | Weight= 14 | Solution=[0,1,1,0,0,0]
+Sub Prob | 0.1.2.1.2.2.2 | Value=  6 | Weight= 14 | Solution=[0,1,1,0,0,0]
+Sub Prob | 0.1.2.1.2.2.1 | Value=  8 | Weight= 25 | Solution=[1,1,1,0,0,0]
+Sub Prob | 0.1.2.1.2.1 | Value=  8 | Weight= 24 | Solution=[0,1,1,0,1,0]
+Sub Prob | 0.1.2.1.2.1.2 | Value=  8 | Weight= 24 | Solution=[0,1,1,0,1,0]
+Sub Prob | 0.1.2.1.2.1.1 | Value= 10 | Weight= 35 | Solution=[1,1,1,0,1,0]
+Sub Prob | 0.1.2.1.1 | Value= 11 | Weight= 28 | Solution=[0,1,1,1,0,0]
+Sub Prob | 0.1.2.1.1.2 | Value= 11 | Weight= 28 | Solution=[0,1,1,1,0,0]
+Sub Prob | 0.1.2.1.1.2.2 | Value= 11 | Weight= 28 | Solution=[0,1,1,1,0,0]
+Sub Prob | 0.1.2.1.1.2.1 | Value= 13 | Weight= 39 | Solution=[1,1,1,1,0,0]
+Sub Prob | 0.1.2.1.1.1 | Value= 13 | Weight= 38 | Solution=[0,1,1,1,1,0]
+Sub Prob | 0.1.2.1.1.1.2 | Value= 13 | Weight= 38 | Solution=[0,1,1,1,1,0]
+Sub Prob | 0.1.1 | Value=  7 | Weight= 16 | Solution=[0,0,1,0,0,1]
+Sub Prob | 0.1.1.2 | Value=  7 | Weight= 16 | Solution=[0,0,1,0,0,1]
+Sub Prob | 0.1.1.2.2 | Value=  7 | Weight= 16 | Solution=[0,0,1,0,0,1]
+Sub Prob | 0.1.1.2.2.2 | Value=  7 | Weight= 16 | Solution=[0,0,1,0,0,1]
+Sub Prob | 0.1.1.2.2.2.2 | Value=  7 | Weight= 16 | Solution=[0,0,1,0,0,1]
+Sub Prob | 0.1.1.2.2.2.1 | Value=  9 | Weight= 27 | Solution=[1,0,1,0,0,1]
+Sub Prob | 0.1.1.2.2.1 | Value=  9 | Weight= 26 | Solution=[0,0,1,0,1,1]
+Sub Prob | 0.1.1.2.2.1.2 | Value=  9 | Weight= 26 | Solution=[0,0,1,0,1,1]
+Sub Prob | 0.1.1.2.2.1.1 | Value= 11 | Weight= 37 | Solution=[1,0,1,0,1,1]
+Sub Prob | 0.1.1.2.1 | Value= 12 | Weight= 30 | Solution=[0,0,1,1,0,1]
+Sub Prob | 0.1.1.2.1.2 | Value= 12 | Weight= 30 | Solution=[0,0,1,1,0,1]
+Sub Prob | 0.1.1.2.1.2.2 | Value= 12 | Weight= 30 | Solution=[0,0,1,1,0,1]
+Sub Prob | 0.1.1.2.1.1 | Value= 14 | Weight= 40 | Solution=[0,0,1,1,1,1]
+Sub Prob | 0.1.1.2.1.1.2 | Value= 14 | Weight= 40 | Solution=[0,0,1,1,1,1]
+Sub Prob | 0.1.1.1 | Value= 10 | Weight= 24 | Solution=[0,1,1,0,0,1]
+Sub Prob | 0.1.1.1.2 | Value= 10 | Weight= 24 | Solution=[0,1,1,0,0,1]
+Sub Prob | 0.1.1.1.2.2 | Value= 10 | Weight= 24 | Solution=[0,1,1,0,0,1]
+Sub Prob | 0.1.1.1.2.2.2 | Value= 10 | Weight= 24 | Solution=[0,1,1,0,0,1]
+Sub Prob | 0.1.1.1.2.2.1 | Value= 12 | Weight= 35 | Solution=[1,1,1,0,0,1]
+Sub Prob | 0.1.1.1.2.1 | Value= 12 | Weight= 34 | Solution=[0,1,1,0,1,1]
+Sub Prob | 0.1.1.1.2.1.2 | Value= 12 | Weight= 34 | Solution=[0,1,1,0,1,1]
+Sub Prob | 0.1.1.1.1 | Value= 15 | Weight= 38 | Solution=[0,1,1,1,0,1]
+Sub Prob | 0.1.1.1.1.2 | Value= 15 | Weight= 38 | Solution=[0,1,1,1,0,1]
+Sub Prob | 0.1.1.1.1.2.2 | Value= 15 | Weight= 38 | Solution=[0,1,1,1,0,1]
+
+Optimal | Knapsack | Solution
+x1 | 0
+x2 | 1
+x3 | 1
+x4 | 1
+x5 | 0
+x6 | 1
+Max value | 15
+Iterations | 112

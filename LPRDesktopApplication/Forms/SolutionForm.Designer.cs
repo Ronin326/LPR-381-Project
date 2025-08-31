@@ -42,6 +42,7 @@
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.IterationListView = new System.Windows.Forms.ListView();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
@@ -60,7 +61,6 @@
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.LogoBox = new System.Windows.Forms.PictureBox();
-			this.IterationListView = new System.Windows.Forms.ListView();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -226,6 +226,19 @@
 			this.panel4.Size = new System.Drawing.Size(787, 349);
 			this.panel4.TabIndex = 2;
 			// 
+			// IterationListView
+			// 
+			this.IterationListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.IterationListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.IterationListView.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.IterationListView.ForeColor = System.Drawing.Color.White;
+			this.IterationListView.HideSelection = false;
+			this.IterationListView.Location = new System.Drawing.Point(6, 30);
+			this.IterationListView.Name = "IterationListView";
+			this.IterationListView.Size = new System.Drawing.Size(778, 277);
+			this.IterationListView.TabIndex = 3;
+			this.IterationListView.UseCompatibleStateImageBehavior = false;
+			// 
 			// button1
 			// 
 			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(164)))));
@@ -239,6 +252,7 @@
 			this.button1.TabIndex = 2;
 			this.button1.Text = "📄 Export Results to Output File";
 			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// label2
 			// 
@@ -467,19 +481,6 @@
 			this.LogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.LogoBox.TabIndex = 8;
 			this.LogoBox.TabStop = false;
-			// 
-			// IterationListView
-			// 
-			this.IterationListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.IterationListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.IterationListView.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.IterationListView.ForeColor = System.Drawing.Color.White;
-			this.IterationListView.HideSelection = false;
-			this.IterationListView.Location = new System.Drawing.Point(6, 30);
-			this.IterationListView.Name = "IterationListView";
-			this.IterationListView.Size = new System.Drawing.Size(778, 277);
-			this.IterationListView.TabIndex = 3;
-			this.IterationListView.UseCompatibleStateImageBehavior = false;
 			// 
 			// SolutionForm
 			// 

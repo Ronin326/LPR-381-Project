@@ -100,5 +100,10 @@ namespace LPRDesktopApplication.Forms
 				Business.Logic.KnapsackFormating(IterationListView, Program.Iterations);
 			}
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Data.DataHandler.ExportResults();
+		}
 	}
 }

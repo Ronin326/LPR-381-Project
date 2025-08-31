@@ -68,5 +68,42 @@ namespace LPRDesktopApplication.Data
 				Program.KnapsackMaxWeight = double.Parse(weightParts.Last(), CultureInfo.InvariantCulture);
 			}
 		}
+		//Export to output Folder
+		public static void ExportResults()
+		{
+			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+			{
+				saveFileDialog.Filter = "Text File|*.txt";
+				saveFileDialog.Title = "Save Knapsack Results";
+				saveFileDialog.FileName = "Exported Text.txt";
+
+				if (saveFileDialog.ShowDialog() == DialogResult.OK)
+				{
+					try
+					{
+						List<string> text = new List<string>();
+
+						text.Add("Optimal Z Value:\nz = " + Program.OptimalZValue);
+						text.Add("\nOptimal X values:");
+						foreach (KeyValuePair<string, string> var in Program.OptimalVars)
+						{
+							text.Add(var.Key + ": " + var.Value);
+						}
+
+						text.Add("\nIterations:");
+						foreach (string line in Program.Iterations)
+						{
+							text.Add(line);
+						}
+						File.WriteAllLines(saveFileDialog.FileName, text);
+						MessageBox.Show("Results exported successfully!", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					catch (IOException ex)
+					{
+						MessageBox.Show($"Error saving file: {ex.Message}", "Export Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+			}
+		}
 	}
 }
