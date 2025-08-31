@@ -1,9 +1,10 @@
-﻿using System;
+﻿using LPRDesktopApplication.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LPRDesktopApplication.Models;
 
 namespace LPRDesktopApplication
 {
@@ -44,9 +45,47 @@ namespace LPRDesktopApplication
 
 		static void Main()
 		{
-			Application.EnableVisualStyles();
+            DebugPrintExportedText();
+
+            Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
         }
-	}
+        private static string GetSolutionOutputDirectory()
+        {
+            // exeDir = ...\bin\Debug\
+            var exeDir = AppDomain.CurrentDomain.BaseDirectory;
+            var projectRoot = Directory.GetParent(exeDir).Parent.Parent.FullName;
+            return Path.Combine(projectRoot, "Output");
+        }
+
+        private static void DebugPrintExportedText()
+        {
+            try
+            {
+                var outputDir = GetSolutionOutputDirectory();
+                var path = Path.Combine(outputDir, "Exported Text.txt");
+
+                if (File.Exists(path))
+                {
+                    Console.WriteLine("=== Exported Text.txt contents ===");
+                    foreach (var line in File.ReadAllLines(path))
+                    {
+                        Console.WriteLine(line);
+                    }
+                    Console.WriteLine("=== End of file ===");
+                }
+                else
+                {
+                    Console.WriteLine("Exported Text.txt not found in " + path);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error reading Exported Text.txt: " + ex.Message);
+            }
+        }
+
+
+    }
 }
