@@ -86,6 +86,7 @@
     <Compile Include="Models\ConicalForm.cs" />
     <Compile Include="Models\CuttingPlane.cs" />
     <Compile Include="Models\DualBuilder.cs" />
+    <Compile Include="Models\DualityVerifier.cs" />
     <Compile Include="Models\DualRunner.cs" />
     <Compile Include="Models\DualSimplex.cs" />
     <Compile Include="Models\DualStandaloneSolver.cs" />

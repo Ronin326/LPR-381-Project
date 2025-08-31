@@ -249,5 +249,12 @@ namespace LPRDesktopApplication.Forms
 
             DualStandaloneSolver.SolveDualFromFileAndShow("Dual.txt");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        { 
+
+            DualityVerifier.VerifyAndShow(tol: 1e-6);
+        }
+
     }
 }
