@@ -59,6 +59,7 @@ namespace LPRDesktopApplication.Models
 			Program.Iterations.Clear();
 			Program.OptimalVars.Clear();
 			Program.OptimalZValue = "";
+			Program.RelaxedOptimalFormattedLines.Clear();
 
 			int rows = tableau.GetLength(0);
 			int cols = tableau.GetLength(1);
@@ -122,6 +123,38 @@ namespace LPRDesktopApplication.Models
 
 			// Objective value
 			Program.OptimalZValue = tableau[0, rhsCol].ToString("0.##");
+
+			// =======================
+			// Save Relaxed Optimal Tableau (for B&B)
+			// =======================
+			var formatted = new List<string>();
+
+			// Header
+			var header = new StringBuilder("      ");
+			foreach (var col in columnNames)
+				header.Append($"{col,6}");
+			formatted.Add(header.ToString());
+
+			// Rows
+			for (int i = 0; i < rows; i++)
+			{
+				var row = new StringBuilder($"{rowNames[i],4} ");
+				for (int j = 0; j < cols; j++)
+					row.Append($"{tableau[i, j],6:0.##}");
+				formatted.Add(row.ToString());
+			}
+
+			// Variable constraints (copy from original formatted canonical)
+			int varLineIndex = Program.FormattedCanonicalFormLines.FindIndex(l => l.StartsWith("Var Constraints:"));
+			if (varLineIndex >= 0)
+			{
+				formatted.Add("");
+				formatted.Add("Var Constraints:");
+				for (int i = varLineIndex + 1; i < Program.FormattedCanonicalFormLines.Count; i++)
+					formatted.Add(Program.FormattedCanonicalFormLines[i]);
+			}
+
+			Program.RelaxedOptimalFormattedLines.AddRange(formatted);
 		}
 
 		private static void SaveIteration(double[,] tableau, List<string> rowNames, List<string> colNames, string title, int pivotRow = -1, int pivotCol = -1)
@@ -146,7 +179,7 @@ namespace LPRDesktopApplication.Models
 				{
 					string val = tableau[i, j].ToString("0.##").PadLeft(6);
 					if (i == pivotRow || j == pivotCol)
-						val = $"{val}"; // mark pivot row/col if needed
+						val = $"{val}";
 					sb.Append(val + "\t");
 				}
 				sb.AppendLine();

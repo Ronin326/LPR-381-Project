@@ -91,6 +91,10 @@ namespace LPRDesktopApplication.Forms
 			{
 				Business.Logic.PrimalLoadIterationsToListView(IterationListView, Program.Iterations);
 			}
+			if (Program.AlgorithmSelected == Algorithms.BanchAndBound)
+			{
+				Business.Logic.BranchAndBoundLoadIterationsToListView(IterationListView, Program.Iterations);
+			}
 		}
 	}
 }

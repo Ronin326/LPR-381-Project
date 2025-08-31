@@ -102,5 +102,34 @@ namespace LPRDesktopApplication.Business
 				listView.Items.Add(empty);
 			}
 		}
+		// listview fromating for branch and bound
+		public static void BranchAndBoundLoadIterationsToListView(System.Windows.Forms.ListView listView, List<string> iterations)
+		{
+			// Set ListView properties
+			listView.View = View.Details;
+			listView.FullRowSelect = true;
+			listView.GridLines = true;
+			listView.HeaderStyle = ColumnHeaderStyle.None; // hide headers
+			listView.Columns.Clear();
+			listView.Items.Clear();
+
+			// Only one column
+			listView.Columns.Add("", 600); // adjust width as needed
+
+			// Load iterations
+			foreach (string line in iterations)
+			{
+				ListViewItem item = new ListViewItem(line);
+
+				// Highlight Root: Z lines in orange
+				if (line.StartsWith("Root: Z"))
+				{
+					item.ForeColor = Color.Orange;
+					item.Font = new Font(listView.Font, FontStyle.Bold);
+				}
+
+				listView.Items.Add(item);
+			}
+		}
 	}
 }

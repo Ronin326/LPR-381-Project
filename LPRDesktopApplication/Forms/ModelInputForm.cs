@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LPRDesktopApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -133,6 +134,10 @@ namespace LPRDesktopApplication.Forms
 					Program.AlgorithmSelected = Algorithms.PrimalSimplex;
 					Models.PrimalSimplex.SolveFromFormattedCanonical();
 					Console.WriteLine("Optimal Z Value:",Program.OptimalZValue);
+					foreach (string line in Program.RelaxedOptimalFormattedLines)
+					{
+						Console.WriteLine(line);
+					}
 					SolutionForm form = new SolutionForm();
 					this.Hide();
 					form.ShowDialog();
@@ -153,6 +158,27 @@ namespace LPRDesktopApplication.Forms
 				{
 					Console.WriteLine("Branch and Bound Selected");
 					Program.AlgorithmSelected = Algorithms.BanchAndBound;
+					Models.RelaxedModel.SolveFromFormattedCanonical();
+					foreach (string line in Program.RelaxedOptimalFormattedLines)
+					{
+						Console.WriteLine(line);
+					}
+					Console.WriteLine("Optimal Z Value: " + Program.OptimalZValue);
+					try
+					{
+						BranchAndBound.Solve(); // No parameter needed now
+
+						MessageBox.Show("Branch & Bound solved successfully. Check Iterations for details.");
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Error: " + ex.Message);
+					}
+					Console.WriteLine("Optimal Z Value: " + Program.OptimalZValue);
+					SolutionForm form = new SolutionForm();
+					this.Hide();
+					form.ShowDialog();
+					this.Close();
 				}
 				else if (CuttinRadioButton.Checked)
 				{
