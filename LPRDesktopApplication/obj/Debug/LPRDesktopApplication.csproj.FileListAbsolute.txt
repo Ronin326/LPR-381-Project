@@ -40,3 +40,4 @@ C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDeskto
 C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.csproj.CoreCompileInputs.cache
 C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.exe
 C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.pdb
+C:\Users\reina\Desktop\LPR-381-Project\LPRDesktopApplication\obj\Debug\LPRDesktopApplication.Forms.DualForm.resources

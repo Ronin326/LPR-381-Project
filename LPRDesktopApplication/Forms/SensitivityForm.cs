@@ -1,13 +1,16 @@
-﻿using System;
+﻿using LPR_381_Project.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LPRDesktopApplication.Forms
 {
@@ -224,6 +227,27 @@ namespace LPRDesktopApplication.Forms
 
         private void panel9_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DualBuilder.BuildAndStoreDualFromCurrent();
+
+            // Open in a new window
+            var dualForm = new DualForm();
+            dualForm.Show(); // Use ShowDialog() if you want it moda
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!DualRunner.PrepareDualForSolving(setAlgorithmToDualSimplex: true))
+                return;
+
+ 
+            var where = DualRunner.SaveDualToOutput("Dual.txt");
+
+            DualStandaloneSolver.SolveDualFromFileAndShow("Dual.txt");
         }
     }
 }

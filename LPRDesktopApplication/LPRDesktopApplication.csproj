@@ -52,6 +52,12 @@
     <Compile Include="Forms\CreateModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\DualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DualForm.Designer.cs">
+      <DependentUpon>DualForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SensitivityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,13 +85,19 @@
     <Compile Include="Models\BranchAndBoundSolver.cs" />
     <Compile Include="Models\ConicalForm.cs" />
     <Compile Include="Models\CuttingPlane.cs" />
+    <Compile Include="Models\DualBuilder.cs" />
+    <Compile Include="Models\DualRunner.cs" />
     <Compile Include="Models\DualSimplex.cs" />
+    <Compile Include="Models\DualStandaloneSolver.cs" />
     <Compile Include="Models\Knapsack.cs" />
     <Compile Include="Models\PrimalSimplex.cs" />
     <Compile Include="Models\RelaxedModel.cs" />
     <Compile Include="Models\Sensitivity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\DualForm.resx">
+      <DependentUpon>DualForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModelInputForm.resx">
       <DependentUpon>ModelInputForm.cs</DependentUpon>
     </EmbeddedResource>

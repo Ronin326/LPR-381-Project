@@ -1,0 +1,5 @@
+min z = 14y1 + 28y2 - 3y3
+1y1 + 4y2 - 1y3 - s1 = -6
+2y1 + 3y2 + 0 - s2 = 0
++ y1 y2 free y3
+# Note: primal had integer markers; dual built for the continuous relaxation.
