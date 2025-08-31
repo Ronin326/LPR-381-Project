@@ -83,6 +83,7 @@
     <Compile Include="Models\Knapsack.cs" />
     <Compile Include="Models\PrimalSimplex.cs" />
     <Compile Include="Models\RelaxedModel.cs" />
+    <Compile Include="Models\Sensitivity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ModelInputForm.resx">

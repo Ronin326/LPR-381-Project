@@ -29,6 +29,11 @@ namespace LPRDesktopApplication
 		public static Dictionary<string, string> OptimalVars = new Dictionary<string, string>();
 		public static List<string> Iterations = new List<string>();
 
+		//Global Vars vor Sensitivy
+		public static Dictionary<string, string> NBVars = new Dictionary<string,string>();
+		public static Dictionary<string, string> BVars = new Dictionary<string, string>();
+		public static Dictionary<string, string> RHSValues = new Dictionary<string, string>();
+
 		//Global var for algoritm
 		public static Algorithms AlgorithmSelected = new Algorithms();
 
