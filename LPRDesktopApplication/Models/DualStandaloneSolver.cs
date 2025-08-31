@@ -27,7 +27,26 @@ namespace LPRDesktopApplication
     public static class DualStandaloneSolver
     {
         #region Public entry points
+        private static readonly object _stateLock = new object();
 
+        // Last solved dual variable values (y’s). Empty if nothing solved or last solve failed.
+        public static Dictionary<string, double> LastY { get; private set; }
+            = new Dictionary<string, double>(StringComparer.OrdinalIgnoreCase);
+
+        // Extra handy bits (optional)
+        public static double LastZ { get; private set; } = 0.0;       // last min objective
+        public static bool LastSuccess { get; private set; } = false;  // last solve status
+        public static DateTime LastSolvedAt { get; private set; }      // timestamp of last attempt
+            = DateTime.MinValue;
+
+        // Optional helper if you prefer a copy (read-only-ish)
+        public static Dictionary<string, double> GetLastYCopy()
+        {
+            lock (_stateLock)
+            {
+                return new Dictionary<string, double>(LastY, StringComparer.OrdinalIgnoreCase);
+            }
+        }
         public static void SolveDualFromFileAndShow(string fileName = "Dual.txt")
         {
             string full = ResolveOutputPath(fileName);
@@ -123,6 +142,20 @@ namespace LPRDesktopApplication
                 result.Success = false;
                 result.Message = ex.Message;
                 result.Log.Add("ERROR: " + ex);
+            }
+
+            lock (_stateLock)
+            {
+                LastSolvedAt = DateTime.Now;
+                LastSuccess = result.Success;
+                LastZ = result.Success ? result.ZOpt : 0.0;
+
+                LastY.Clear();
+                if (result.Success && result.Y != null)
+                {
+                    foreach (var kv in result.Y)
+                        LastY[kv.Key] = kv.Value;
+                }
             }
 
             return result;
