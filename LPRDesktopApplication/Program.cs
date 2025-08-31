@@ -32,6 +32,11 @@ namespace LPRDesktopApplication
 		//Global var for algoritm
 		public static Algorithms AlgorithmSelected = new Algorithms();
 
+		//Vars for knapsack
+		public static List<int> KnapsackValue = new List<int>();
+		public static List<int> KnapsackWeight = new List<int>();
+		public static double KnapsackMaxWeight = 0;
+
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>

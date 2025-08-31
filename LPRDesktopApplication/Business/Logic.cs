@@ -131,5 +131,64 @@ namespace LPRDesktopApplication.Business
 				listView.Items.Add(item);
 			}
 		}
+		//Knpsack listview formating
+		// Knapsack listview formatting
+		// Knapsack listview formatting with auto-size for Solution
+		public static void KnapsackFormating(System.Windows.Forms.ListView listView, List<string> iterations)
+		{
+			// Set ListView properties
+			listView.View = View.Details;
+			listView.FullRowSelect = true;
+			listView.GridLines = true;
+			listView.HeaderStyle = ColumnHeaderStyle.None; // hide headers
+			listView.Columns.Clear();
+			listView.Items.Clear();
+
+			// Determine max number of columns
+			int maxColumns = 0;
+			foreach (string line in iterations)
+			{
+				string[] cells = line.Split(new[] { " | " }, StringSplitOptions.None);
+				if (cells.Length > maxColumns)
+					maxColumns = cells.Length;
+			}
+
+			// Add placeholder columns
+			for (int i = 0; i < maxColumns; i++)
+				listView.Columns.Add("", 120);
+
+			// Load iterations
+			foreach (string line in iterations)
+			{
+				string[] cells = line.Split(new[] { " | " }, StringSplitOptions.None);
+				ListViewItem item = new ListViewItem(cells[0]);
+
+				// Add remaining columns
+				for (int i = 1; i < maxColumns; i++)
+				{
+					if (i < cells.Length)
+						item.SubItems.Add(cells[i]);
+					else
+						item.SubItems.Add("");
+				}
+
+				// Set colors and font styles
+				if (line.StartsWith("Ranking by") || line.StartsWith("Optimal"))
+				{
+					item.ForeColor = System.Drawing.Color.Orange;
+					item.Font = new System.Drawing.Font(listView.Font, FontStyle.Bold);
+				}
+				else if (line.StartsWith("Max value") || line.StartsWith("Iterations"))
+				{
+					item.ForeColor = System.Drawing.Color.Cyan;
+					item.Font = new System.Drawing.Font(listView.Font, FontStyle.Bold);
+				}
+
+				listView.Items.Add(item);
+			}
+
+			// Auto-resize the last column if it contains Solution[]
+			listView.AutoResizeColumn(maxColumns - 1, ColumnHeaderAutoResizeStyle.ColumnContent);
+		}
 	}
 }

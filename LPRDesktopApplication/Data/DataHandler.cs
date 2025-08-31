@@ -2,6 +2,8 @@
 using LPRDesktopApplication.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +35,38 @@ namespace LPRDesktopApplication.Data
 
 			//Get Cononical form
 			ConicalForm.GenerateConicalForm(ModelPath);
+			KnapsackFormatText(ModelPath);
 			
+		}
+		//Knapsack Parser
+		public static void KnapsackFormatText(string path)
+		{
+
+			var lines = File.ReadAllLines(path)
+				.Where(l => !string.IsNullOrWhiteSpace(l))
+				.Select(l => l.Trim())
+				.ToArray();
+
+			if (lines.Length < 3)
+				throw new InvalidOperationException("Expected: objective line, >=1 constraint line, and a sign-restrictions line.");
+
+			if (lines[lines.Length - 1].Contains("bin"))
+			{
+				// Values (objective coefficients)
+				Program.KnapsackValue = lines[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+										.Skip(1)
+										.Select(s => int.Parse(s.Replace("+", "")))
+										.ToList();
+
+				// Weights (RHS of constraints)
+				var weightParts = lines[1].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+				Program.KnapsackWeight = weightParts.Take(weightParts.Length - 2)
+											.Select(s => int.Parse(s.Replace("+", "")))
+											.ToList();
+
+				// Max capacity
+				Program.KnapsackMaxWeight = double.Parse(weightParts.Last(), CultureInfo.InvariantCulture);
+			}
 		}
 	}
 }

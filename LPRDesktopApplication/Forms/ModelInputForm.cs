@@ -214,6 +214,18 @@ namespace LPRDesktopApplication.Forms
 				{
 					Console.WriteLine("Knapsack Selected");
 					Program.AlgorithmSelected = Algorithms.Knapsack;
+					if (Program.KnapsackValue.Count > 0)
+					{
+						Models.Knapsack.Solve();
+						SolutionForm form = new SolutionForm();
+						this.Hide();
+						form.ShowDialog();
+						this.Close();
+					}
+					else
+					{
+						MessageBox.Show("Model cant be solved using Knapsack");
+					}
 				}
 				else
 				{

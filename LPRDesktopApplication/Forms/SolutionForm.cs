@@ -95,6 +95,10 @@ namespace LPRDesktopApplication.Forms
 			{
 				Business.Logic.BranchAndBoundLoadIterationsToListView(IterationListView, Program.Iterations);
 			}
+			if (Program.AlgorithmSelected == Algorithms.Knapsack)
+			{
+				Business.Logic.KnapsackFormating(IterationListView, Program.Iterations);
+			}
 		}
 	}
 }

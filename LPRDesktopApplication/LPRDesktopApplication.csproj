@@ -80,6 +80,7 @@
     <Compile Include="Models\ConicalForm.cs" />
     <Compile Include="Models\CuttingPlane.cs" />
     <Compile Include="Models\DualSimplex.cs" />
+    <Compile Include="Models\Knapsack.cs" />
     <Compile Include="Models\PrimalSimplex.cs" />
     <Compile Include="Models\RelaxedModel.cs" />
     <Compile Include="Program.cs" />
